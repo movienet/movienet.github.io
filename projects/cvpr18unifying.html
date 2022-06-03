@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="Project Page: Person Search in Videos with One Portrait
+    Through Visual and Temporal Links">
+    <meta name="keywords" content="movie, person search, reid, computer vision, deep learning">
+    <meta name="author" content="Qingqiu Huang">
+    <link rel="author" href="http://qqhuang.cn/">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Title and Icon -->
+    <title>Unifying Identification (CVPR 2018)</title>
+    <link rel="icon" href="imgs/share/movienet_logo.png" />
+    <!-- include css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="headline">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-1 movienet align-self-center">
+                        <a href="../index.html">
+                            <img src="imgs/share/movienet_logo_text.png">
+                        </a>
+                    </div>
+                    <div class="col-md-10 text">
+                        <div class="title">Unifying Identification and Context Learning for Person Recognition
+                        </div>
+                        <div class="author">
+                            <a href="http://qqhuang.cn" target="_blank">Qingqiu Huang</a>
+                            <a href="http://xiongyu.me/" target="_blank">Yu Xiong</a>
+                            <a href="http://dahua.me/" target="_blank">Dahua Lin</a>
+                        </div>
+                        <div class="affiliation">
+                            CUHK-SenseTime Joint Lab, The Chinese University of Hong Kong
+                        </div>
+                        <div class="venue">
+                            IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2018, Salt Lake City, UT, USA
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container article-main">
+        <center>
+        <div class="pic-wrapper-2">
+            <br>
+            <img src="imgs/cvpr18unifying/teaser.png">
+        </div>
+        </center>
+        
+        <div class="section dashed">
+            <h4>Abstract</h4>
+            <div class="abstract justify-text-between">
+                Despite the great success of face recognition techniques,
+                    recognizing persons under unconstrained settings remains
+                    challenging. Issues like profile views, unfavorable lighting,
+                    and occlusions can cause substantial difficulties.
+                    Previous works have attempted to tackle this problem by exploiting the context,
+                    e.g. clothes and social relations.
+                    While showing promising improvement, they are usually limited in two
+                    important aspects,
+                    relying on simple heuristics to combine different cues
+                    and separating the construction of context from people identities.
+                    In this work, we aim to move beyond such limitations and
+                    propose a new framework to leverage context for person recognition.
+                    In particular, we propose a Region Attention Network, which is learned
+                    to adaptively combine visual cues with instance-dependent
+                    weights.
+                    We also develop a unified formulation, where the social contexts
+                    are learned along with the reasoning of people identities.
+                    These models substantially improve the robustness
+                    when working with the complex contextual relations in
+                    unconstrained environments.
+                    On two large datasets, PIPA and Cast In Movies (CIM),
+                    a new dataset proposed in this work, our method consistently
+                    achieves state-of-the-art performance under multiple evaluation policies.
+            </div>
+        </div>
+
+        <div class=" section dashed">
+            <h4>Framework</h4>
+                <center>
+                <img width="80%" src="imgs/cvpr18unifying/framework.png">
+                <br>
+                <br>
+                </center>
+            <h4>Results</h4>
+                <center>
+                <br>
+                <div class="col-md-12"> Accuracy on CSM
+                    <table class="table">
+                        <tr class="right-bordered">
+                            <th class="vertical-center right-bordered" rowspan="2">Dataset</th>
+                            <th class="vertical-center right-bordered" rowspan="2">Split</th>
+                            <th class="right-bordered" colspan="4">Existing Methods on PIPA</th>
+                            <th colspan="4">Ours</th>
+                        </tr>
+                        <tr class="right-bordered">
+                            <td ><a class="w3-text-teal" href="https://arxiv.org/abs/1501.05703">PIPER</a></td>
+                            <td ><a class="w3-text-teal" href="https://arxiv.org/abs/1509.03502?context=cs">Naeil</a></td>
+                            <td ><a class="w3-text-teal" href="https://arxiv.org/abs/1611.09967">RNN</a></td>
+                            <td class="right-bordered"><a class="w3-text-teal" href="https://ieeexplore.ieee.org/abstract/document/7780514/">MLC</a></td>
+                            <td >Baseline</td>
+                            <td >+RANet</td>
+                            <td >+RANet+P</td>
+                            <td >Full Model</td>
+                        </tr>
+                        <tr class="right-bordered">
+                            <td class="vertical-center right-bordered" rowspan="4">PIPA</td>
+                            <td class="right-bordered">Original</td>
+                            <td >83.05</td>
+                            <td >86.78</td>
+                            <td >84.93</td>
+                            <td class="right-bordered">88.20</td>
+                            <td >82.79</td>
+                            <td >87.33</td>
+                            <td >88.06</td>
+                            <td ><strong>89.73</strong></td>
+                        </tr>
+                        <tr class="right-bordered">
+                            <td class="right-bordered">Album</td>
+                            <td >-</td>
+                            <td >78.72</td>
+                            <td >78.25</td>
+                            <td class="right-bordered">83.02</td>
+                            <td >75.24</td>
+                            <td >82.59</td>
+                            <td >83.21</td>
+                            <td ><strong>85.33</strong></td>
+                        </tr>
+                        <tr class="right-bordered">
+                            <td class="right-bordered">Time</td>
+                            <td >-</td>
+                            <td >69.29</td>
+                            <td >66.43</td>
+                            <td class="right-bordered">77.04</td>
+                            <td >66.55</td>
+                            <td >76.52</td>
+                            <td >77.64</td>
+                            <td ><strong>80.42</strong></td>
+                        </tr>
+                        <tr class="right-bordered">
+                            <td class="right-bordered">Day</td>
+                            <td >-</td>
+                            <td >46.61</td>
+                            <td >43.73</td>
+                            <td class="right-bordered">59.77</td>
+                            <td >47.09</td>
+                            <td >65.49</td>
+                            <td >65.91</td>
+                            <td ><strong>67.16</strong></td>
+                        </tr>
+                        <tr class="right-bordered">
+                            <td class="right-bordered">CIM</td>
+                            <td class="right-bordered">-</td>
+                            <td >-</td>
+                            <td >-</td>
+                            <td >-</td>
+                            <td class="right-bordered">-</td>
+                            <td >68.12</td>
+                            <td >71.93</td>
+                            <td >72.56</td>
+                            <td ><strong>74.40</strong></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <br>
+                Examples of Recognition Results
+                <br>
+                <img width="80%" src="imgs/cvpr18unifying/result.png">
+
+                <br>
+            </center>
+
+            <h4>CIM Dataset</h4>
+                <i>Cast In Movies</i> (CIM) contains more than <b>150K</b> instances of <b>1,218</b> cast from 192 movies.
+                Bounding box and indentity of each instance are manually annotated.
+                <center>
+                    <div class=""> Accuracy on CSM
+                        Comparison between <a class="" href="https://people.eecs.berkeley.edu/~nzhang/piper.html">PIPA</a> and CIM
+                    <div class="overflow-context">
+                        <table class="table">
+                            <tr class="right-bordered">
+                                <th class="right-bordered">Dataset</th>
+                                <th >Images</th>
+                                <th >Identities</th>
+                                <th >Instacens</th>
+                                <th >Distractors</th>
+                                <th >Instances/Identities</th>
+                            </tr>
+                            <tr class="right-bordered">
+                                <td class="right-bordered">PIPA</td>
+                                <td>37,107</td>
+                                <td>2,356</td>
+                                <td>63,188</td>
+                                <td>11,437</td>
+                                <td>26.82</td>
+                            </tr>
+                            <tr class="right-bordered">
+                                <td class="right-bordered">CIM</td>
+                                <td>72,875</td>
+                                <td>1,218</td>
+                                <td>150,522</td>
+                                <td>72,924</td>
+                                <td>63.70</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br />
+                    Examples of CIM
+                    <br>
+                    <img class="center-block" style="width:80%;" src="imgs/cvpr18unifying/cim2.png" />
+                </center>
+                
+        </div>
+
+        <div class="section dashed">
+            <h4>Materials</h4>
+            <div class="row justify-content-between">
+                <div class="col-md-4">
+                    <div class="griditem">
+                        <a href="https://arxiv.org/pdf/1806.03084.pdf"
+                            target="_blank" class="image-link">
+                            <img src="imgs/cvpr18unifying/paper.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Paper</span></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="griditem">
+                        <a href="https://github.com/hqqasw/person-search-PPCC" target="_blank"
+                            class="image-link">
+                            <img src="imgs/share/github_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Code</span></a>
+                    </div>
+                </div>
+                <div class=" col-md-4">
+                    <div class="griditem">
+                        <a href="javascript:void(0)" target="_blank" class="image-link">
+                            <img src="imgs/share/dataset_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Dataset</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="section dashed">
+            <h4>Citation</h4>
+            <div class="code-light-bg">
+                <pre><code>@inproceedings{huang2018unifying,
+    title={Unifying Identification and Context Learning for Person Recognition},
+    author={Huang, Qingqiu and Xiong, Yu and Lin, Dahua},
+    booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+    pages={2217--2225},
+    year={2018}
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h4>Contact</h4>
+            <a href="http://qqhuang.cn/" target="_blank">Qingqiu Huang</a>:
+            <span class="color-light">hq016 [AT] ie.cuhk.edu.hk</span>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            &copy <a href="http://mmlab.ie.cuhk.edu.hk" target="_blank" class="text-warning">Multimedia Lab</a>, The
+            Chinese University of
+            Hong Kong
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript " src="../js/jquery.min.js "></script>
+
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="Project Page: Person Search in Videos with One Portrait
+    Through Visual and Temporal Links">
+    <meta name="keywords" content="movie, person search, reid, computer vision, deep learning">
+    <meta name="author" content="Qingqiu Huang">
+    <link rel="author" href="http://qqhuang.cn/">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Title and Icon -->
+    <title>Person Search (ECCV 2018)</title>
+    <link rel="icon" href="imgs/share/movienet_logo.png" />
+    <!-- include css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="headline">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-1 movienet align-self-center">
+                        <a href="../index.html">
+                            <img src="imgs/share/movienet_logo_text.png">
+                        </a>
+                    </div>
+                    <div class="col-md-10 text">
+                        <div class="title">Person Search in Videos with One Portrait
+                            Through Visual and Temporal Links</div>
+                        <div class="author">
+                            <a href="http://qqhuang.cn" target="_blank">Qingqiu Huang<sup>1</sup></a>
+                            <a href="javascript:void(0)">Wentao Liu<sup>2, 3</sup></a>
+                            <a href="http://dahua.me/" target="_blank">Dahua Lin<sup>1</sup></a>
+                        </div>
+                        <div class="affiliation">
+                            CUHK-SenseTime Joint Lab, The Chinese University of Hong Kong<sup>1</sup>
+                            Tsinghua University<sup>2</sup>
+                            SenseTime Research<sup>3</sup>
+                        </div>
+                        <div class="venue">
+                            European Conference on Computer Vision (ECCV) 2018, Munich, Germany
+                        </div>
+                    </div>
+                    <div class="col-md-1 movienet">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container article-main">
+        <div class="pic-wrapper-1">
+            <br>
+            <img src="imgs/eccv18person/teaser.png">
+        </div>
+
+        <div class="section dashed">
+            <h4>Abstract</h4>
+            <div class="abstract justify-text-between">
+                In real-world applications, e.g. law enforcement and video retrieval, one often needs to search a certain person in long videos with just one portrait. 
+                This is much more challenging than the conventional settings for person re-identification, as the search may need to be carried out in the environments different from where the portrait was taken. 
+                In this paper, we aim to tackle this challenge and propose a novel framework, which takes into account the identity invariance along a tracklet, thus allowing person identities to be propagated via both the visual and the temporal links. 
+                We also develop a novel scheme called Progressive Propagation via Competitive Consensus, which significantly improves the reliability of the propagation process. 
+                To promote the study of person search, we construct a large-scale benchmark, which contains 127K manually annotated tracklets from 192 movies. 
+                Experiments show that our approach remarkably outperforms mainstream person re-id methods, raising the mAP from 42.16% to 62.27%.
+            </div>
+        </div>
+
+        <div class=" section dashed">
+            <h4>Progressive Propagation via Competitive Consensus</h4>
+            <h5>Competitive Consensus</h5>
+            <div class="color-light justify-text-between abs-mg-bot">
+                Competitive Consensus is a novel scheme for label propagation. 
+                Compared to the conventional linear diffusion, it improves the reliability by
+                propagating the most confident information.</div>
+            
+                <center>
+                <img width="80%" src="imgs/eccv18person/competitive_consensus.png">
+                <br>
+                <br>
+                </center>
+            <h5>Progressive Propagation</h5>
+            <div class="color-light justify-text-between abs-mg-bot">
+                Progressive Propagation is a simple but effective scheme to accelerate the propagation process and 
+                reduce the effects of noise, which freezes the label of a certain fraction of nodes at 
+                each iteration according to their confidence.</div>
+            
+            <h4>Results</h4>
+                <center>
+                
+                <br>
+                <div class="col-md-8"> Accuracy on CSM
+                    <table class="table"> 
+                        <tr class="">
+                            <th class="right-bordered">Dataset</th>
+                            <th >CSM</th>
+                            <th >MARS</th>
+                            <th >iLIDS</th>
+                            <th >PRID</th>
+                            <th >Market</th>
+                            <th >PSD</th>
+                            <th >PIPA</th>
+                        </tr>
+                        <tr class="">
+                            <td class="right-bordered">task</td>
+                            <td>search</td>
+                            <td>re-id</td>
+                            <td>re-id</td>
+                            <td>re-id</td>
+                            <td>re-id</td>
+                            <td>det.+re-id</td>
+                            <td>recog.</td>
+                        </tr>
+                        <tr class="">
+                            <td class="right-bordered">type</td>
+                            <td>video</td>
+                            <td>video</td>
+                            <td>video</td>
+                            <td>video</td>
+                            <td>video</td>
+                            <td>image</td>
+                            <td>image</td>
+                        </tr>
+                        <tr class="">
+                            <td class="right-bordered">identities</td>
+                            <td>1,218</td>
+                            <td>1,261</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>1,501</td>
+                            <td>8,432</td>
+                            <td>2,356</td>
+                        </tr>
+                        <tr class="">
+                            <td class="right-bordered">tracklets</td>
+                            <td>127K</td>
+                            <td>20K</td>
+                            <td>600</td>
+                            <td>400</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr class="">
+                            <td class="right-bordered">instances</td>
+                            <td>11M</td>
+                            <td>1M</td>
+                            <td>44K</td>
+                            <td>40K</td>
+                            <td>32K</td>
+                            <td>96K</td>
+                            <td>63K</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <br>
+                Examples of Search Results
+                <br>
+                <img width="80%" src="imgs/eccv18person/result.png">
+
+                <br>
+            </center>
+        </div>
+
+        <div class="section dashed">
+            <h4>Materials</h4>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="griditem">
+                        <a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Qingqiu_Huang_Person_Search_in_ECCV_2018_paper.pdf"
+                            target="_blank" class="image-link">
+                            <img src="imgs/eccv18person/paper.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Paper</span></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="griditem">
+                        <a href="https://github.com/hqqasw/person-search-PPCC" target="_blank"
+                            class="image-link">
+                            <img src="imgs/share/github_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Code</span></a>
+                    </div>
+                </div>
+                <div class=" col-md-3">
+                    <div class="griditem">
+                        <a href="https://drive.google.com/drive/folders/1u51eRnZS1rQaM7GStPTQKB0BugpnGM9W?usp=sharing" target="_blank" class="image-link">
+                            <img src="imgs/share/googledrive_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Dataset</span></a>
+                    </div>
+                </div>
+                <div class=" col-md-3">
+                    <div class="griditem">
+                        <a href="https://pan.baidu.com/s/1JG30kPTWxJmf1saA0e6CLQ" target="_blank" class="image-link">
+                            <img src="imgs/share/baiduyun_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Dataset</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="section dashed">
+            <h4>Citation</h4>
+            <div class="code-light-bg">
+                <pre><code>@inproceedings{huang2018person,
+    title={Person Search in Videos with One Portrait Through Visual and Temporal Links},
+    author={Huang, Qingqiu and Liu, Wentao and Lin, Dahua},
+    booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
+    pages={425--441},
+    year={2018}
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h4>Contact</h4>
+            <a href="http://qqhuang.cn/" target="_blank">Qingqiu Huang</a>:
+            <span class="color-light">hq016 [AT] ie.cuhk.edu.hk</span>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            &copy <a href="http://mmlab.ie.cuhk.edu.hk" target="_blank" class="text-warning">Multimedia Lab</a>, The
+            Chinese University of
+            Hong Kong
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript " src="../js/jquery.min.js "></script>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="Project Page: 	
+    A Unified Framework for Shot Type Classification Based on Subject Centric Lens">
+    <meta name="keywords" content="movie, shot type, cinematic style analysis, dataset, computer vision, deep learning">
+    <meta name="author" content="Anyi Rao">
+    <link rel="author" href="http://anyirao.com/">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Title and Icon -->
+    <title>Shot Type (ECCV 2020)</title>
+    <link rel="icon" href="imgs/share/movienet_logo.png" />
+    <!-- include css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="headline">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-1 movienet align-self-center">
+                        <a href="../index.html">
+                            <img src="imgs/share/movienet_logo_text.png">
+                        </a>
+                    </div>
+                    <div class="col-md-10 text">
+                        <div class="title">	
+                            A Unified Framework for Shot Type Classification Based on Subject Centric Lens</div>
+                        <div class="author">
+                            <a href="https://anyirao.com/">Anyi Rao<sup>1</sup></a>
+                            <a href="">Jiaze Wang<sup>1</sup></a>
+                            <a href="https://eveneveno.github.io/lnxu/">Linning Xu<sup>1</sup></a>
+                            <a href="">Xuekun Jiang<sup>2</sup></a><br>
+                            <a href="http://qqhuang.cn/">Qingqiu Huang<sup>1</sup></a>
+                            <a href="http://bzhou.ie.cuhk.edu.hk/">Bolei Zhou<sup>1</sup></a>
+                            <a href="http://dahua.me/">Dahua Lin<sup>1</sup></a>
+                        </div>
+                        <div class="affiliation">
+                            CUHK-SenseTime Joint Lab, The Chinese University of Hong Kong<sup>1</sup>
+                            Communication University of China<sup>2</sup>
+                        </div>
+                        <div class="venue">
+                            European Conference on Computer Vision (ECCV) 2020, Glasgow, Scotland, United Kingdom
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container article-main">
+        <div class="pic-wrapper-1">
+            <br>
+            <img src="imgs/eccv20shot/teaser.jpg" >
+        </div>
+
+        <div class="section dashed">
+            <h4>Overview</h4>
+            <div class="abstract justify-text-between">
+                In film making, shot has a profound influence on how the story is delivered and how the audiences are echoed.
+                As different scale and movement types of shots can express different emotions and contents, recognizing shots and
+                their attributes is important to the understanding of movies as well as general videos.
+                Classifying shot type is challenging due to the additional information required beyond the video content,
+                such as the spatial composition of a frame and the video camera movement.
+                To address these issues, we propose a learning framework Subject Guidance Network (SGNet) for shot type recognition.
+                SGNet separates the subject and background of a shot into two streams, serving as maps to guide scale and
+                movement type classification respectively. To facilitate shot type analysis and model evaluations,
+                we build a large-scale dataset MovieShots, which contains 46K shots from 7K movie trailers with annotations of
+                their scale and movement types.
+                Experiments show that our framework is able to recognize these two attributes of shot accurately, outperforming all the previous methods.
+            </div>
+        </div>
+
+
+        <div class="section dashed">
+            <h4>Dataset</h4>
+            <div class="abstract justify-text-between">
+            Shot scale has five categories: 1) long shot (LS) is taken from a long distance,
+            sometimes as far as a quarter of a mile away; 2) full shot (FS) barely includes
+            the human body in full; 3) medium shot (MS) contains a figure from the knees
+            or waist up; 4) close-up shot (CS) concentrates on a relatively small object,
+            showing the face of the hand of a person; (5) extreme close-up shot (ECS) shows
+            even smaller parts such as the image of an eye or a mouth.
+            <br>
+            Shot movement has four categories: 1) in static shot, the camera is fixed but
+            the subject is flexible to move; 2) for motion shot, the camera moves or rotates;
+            3) the camera zooms in for push shot, and 4) zooms out for pull shot. While
+            all the four movement types are widely used in movies, the use of push and
+            pull shots only takes a very small portion. The usage of different shots usually
+            depends on the movie genres and the preferences of the filmmakers.
+            </div>
+            <br>
+            <br>
+
+            <h5>Prototype</h5>
+            <center><br><img src="imgs/eccv20shot/prototype.jpg" width="80%"></center>
+            <br>
+            <h4>Application: Shot type change</h4>
+            <center><br><img src="imgs/eccv20shot/crop_results.jpg" width="80%"></center>
+            
+        </div>
+
+        <div class="section demo">
+            <h4>Introduction Video</h4>
+                <br>
+                <center>
+                    <iframe width="820" height="480" src="https://www.youtube.com/embed/B6hby8pgvjY" frameborder="0" allowfullscreen></iframe>
+                </video>
+                <br>
+                </center>
+        </div>
+
+        <div class="section dashed">
+            <h4>Materials</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="griditem">
+                        <a href="https://arxiv.org/abs/2008.03548" target="_blank" class="imageLink" >
+                            <img src="imgs/eccv20shot/paper.png"><br>
+                            Paper</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="griditem">
+                        <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123560018-supp.pdf" target="_blank"
+                            class="image-link">
+                            <img src="imgs/eccv20shot/supp.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Supplements</span></a>
+                    </div>
+                </div>
+
+                <div class=" col-md-4">
+                    <div class="griditem">
+                        <a href="https://drive.google.com/drive/folders/1wAviJV0fuISKG6RpCAqiwG7lwtfxktkQ?usp=sharing" target="_blank" class="image-link">
+                            <img src="imgs/share/dataset_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Dataset</span></a>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        </div>
+        
+        <div class="section dashed">
+            <h4>Citation</h4>
+            <div class="code-light-bg">
+                <pre><code>@inproceedings{rao2020unified,
+    title={A Unified Framework for Shot Type Classification Based on Subject Centric Lens},
+    author={Rao, Anyi and Wang, Jiaze and Xu, Linning and Jiang, Xuekun, Huang, Qingqiu and Zhou, Bolei and Lin, Dahua},
+    booktitle = {The European Conference on Computer Vision (ECCV)}, 
+    year={2020}
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h4>Contact</h4>
+            <a href="https://anyirao.com/" target="_blank">Anyi Rao</a>:
+            <span class="color-light">anyirao [AT] ie.cuhk.edu.hk</span>
+            <br>
+            <a href="" target="_blank">Jiaze Wang</a>:
+            <span class="color-light">jzwang.cuhk [AT] gmail.com</span>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            &copy <a href="http://mmlab.ie.cuhk.edu.hk" target="_blank" class="text-warning">Multimedia Lab</a>, The
+            Chinese University of
+            Hong Kong
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript " src="../js/jquery.min.js "></script>
+
+</html>

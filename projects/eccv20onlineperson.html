@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="Project Page: 	
+    Online Multi-modal Person Search in Videos">
+    <meta name="keywords" content="movie, shot type, cinematic style analysis, dataset, computer vision, deep learning">
+    <meta name="author" content="Anyi Rao">
+    <link rel="author" href="http://anyirao.com/">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Title and Icon -->
+    <title>Online Person Search (ECCV 2020)</title>
+    <link rel="icon" href="imgs/share/movienet_logo.png" />
+    <!-- include css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="headline">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-1 movienet align-self-center">
+                        <a href="../index.html">
+                            <img src="imgs/share/movienet_logo_text.png">
+                        </a>
+                    </div>
+                    <div class="col-md-10 text">
+                        <div class="title">	
+                            Online Multi-modal Person Search in Videos</div>
+                        <div class="author">
+                            <a href="">Jiangyue Xia<sup>1</sup></a>
+                            <a href="https://anyirao.com/">Anyi Rao<sup>2</sup></a>
+                            <a href="https://eveneveno.github.io/lnxu/">Linning Xu<sup>2</sup></a>
+                            <a href="http://qqhuang.cn/">Qingqiu Huang<sup>2</sup></a>
+                            <a href="http://www.cs.tsinghua.edu.cn/publish/csen/4623/2010/20101224194147178943406/20101224194147178943406_.html">Jiangtao Wen<sup>1</sup></a>
+                            <a href="http://dahua.me/">Dahua Lin<sup>2</sup></a>
+                        </div>
+                        <div class="affiliation">
+                            Tsinghua University<sup>1</sup>
+                            CUHK-SenseTime Joint Lab, The Chinese University of Hong Kong<sup>2</sup>
+                        </div>
+                        <div class="venue">
+                            European Conference on Computer Vision (ECCV) 2020, Glasgow, Scotland, United Kingdom
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container article-main">
+        <div class="pic-wrapper-1">
+            <br>
+            <img src="imgs/eccv20onlineperson/teaser.jpg" >
+        </div>
+
+        <div class="section dashed">
+            <h4>Overview</h4>
+            <div class="abstract justify-text-between">
+                The task of searching certain people in videos has seen increasing potential in real-world applications,
+                such as video organization and editing. Most existing approaches are devised to work in an offline manner,
+                where identifies can only be inferred after an entire video is examined. This working manner precludes such methods from
+                being applied to online services or those applications that require real-time responses.
+                In this paper, we propose an online person search framework, which can recognize people in a video on the fly.
+                This framework maintains a multi-modal memory bank at its heart as the basis for person recognition, and updates it dynamically
+                with a policy obtained by reinforcement learning. Our experiments on a large movie dataset show that the proposed method is effective,
+                not only achieving remarkable improvements over strong online schemes but also outperforming offline methods.
+            </div>
+        </div>
+
+
+        <div class="section dashed">
+            <h4>Online Multi-modal Searching machine</h4>
+            <div class="abstract justify-text-between">
+            Given the portraits of a list of casts, our goal is to search them in a sequential movie with an online fashion following the human behaviors. To tackle this
+            challenging problem, we propose a novel online multi-modal searching machine
+            (OMS). 
+            <br>
+            There are four key components in OMS, i.e.
+            multimodal feature representations (MFR), a dynamic memory bank (DMB),
+            an uncertain instance cache (UIC) and a controller. Each instance, represented by
+            multi-modal features, is compared with the exemplars stored in the memory
+            bank to judge its identity. The controller then determines whether this instance
+            should be used to update memory or put into the uncertain instance cache for
+            later comparisons. The memory bank and the uncertain instance cache are dynamically updated over time,
+            with a strategy operated by the controller. All
+            these components together build an “intelligent machine” to watch a movie and
+            gradually recognize the characters like humans do.
+            </div>
+        </div>
+
+
+        <div class="section dashed">
+            <h4>Materials</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="griditem">
+                        <a href="" target="_blank" class="imageLink" >
+                            <img src="imgs/eccv20onlineperson/paper.png"><br>
+                            Paper [Comming Soon]</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="griditem">
+                        <a href="" target="_blank"
+                            class="image-link">
+                            <img src="imgs/share/github_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Code [Comming Soon]</span></a>
+                    </div>
+                </div>
+                <div class=" col-md-4">
+                    <div class="griditem">
+                        <a href="" target="_blank" class="image-link">
+                            <img src="imgs/share/dataset_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Dataset [Comming Soon]</span></a>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        </div>
+        
+        <div class="section dashed">
+            <h4>Citation</h4>
+            <div class="code-light-bg">
+                <pre><code>@inproceedings{xia2020online,
+    title={Online Multi-modal Person Search in Videos},
+    author={Xia, Jiangyue and Rao, Anyi and Xu, Linning and Huang, Qingqiu and Wen, Jiangtao and Lin, Dahua},
+    booktitle = {The European Conference on Computer Vision (ECCV)}, 
+    year={2020}
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h4>Contact</h4>
+            <a href="" target="_blank">Jiangyue Xia</a>:
+            <span class="color-light">xiajy16 [AT] mails.tsinghua.edu.cn</span>
+            <br>
+            <a href="https://anyirao.com/" target="_blank">Anyi Rao</a>:
+            <span class="color-light">anyirao [AT] ie.cuhk.edu.hk</span>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            &copy <a href="http://mmlab.ie.cuhk.edu.hk" target="_blank" class="text-warning">Multimedia Lab</a>, The
+            Chinese University of
+            Hong Kong
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript " src="../js/jquery.min.js "></script>
+
+</html>

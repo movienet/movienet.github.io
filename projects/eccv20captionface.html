@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="Project Page: Caption-Supervised Face Recognition: 
+    Training a State-of-the-Art Face Model without Manual Annotation">
+    <meta name="keywords" content="movie, face recognition, unsupervised, computer vision, deep learning">
+    <meta name="author" content="Qingqiu Huang">
+    <link rel="author" href="http://qqhuang.cn/">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Title and Icon -->
+    <title>Face Recognition (ECCV 2020)</title>
+    <link rel="icon" href="imgs/share/movienet_logo.png" />
+    <!-- include css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="headline">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-1 movienet align-self-center">
+                        <a href="../index.html">
+                            <img src="imgs/share/movienet_logo_text.png">
+                        </a>
+                    </div>
+                    <div class="col-md-10 text">
+                        <div class="title">Caption-Supervised Face Recognition: 
+                            <br>Training a State-of-the-Art Face Model without Manual Annotation</div>
+                        <div class="author">
+                            <a href="http://qqhuang.cn/">Qingqiu Huang</a>
+                            <a href="http://mmlab.ie.cuhk.edu.hk/">Lei Yang</a>
+                            <a href="http://mmlab.ie.cuhk.edu.hk/">Huaiyi Huang</a>
+                            <a href="http://mmlab.ie.cuhk.edu.hk/">Tong Wu</a>
+                            <a href="http://dahua.me/">Dahua Lin</a>
+                        </div>
+                        <div class="affiliation">
+                            CUHK-SenseTime Joint Lab, The Chinese University of Hong Kong
+                        </div>
+                        <div class="venue">
+                            European Conference on Computer Vision (ECCV) 2020, Glasgow, Scotland, United Kingdom
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container article-main">
+        <div class="pic-wrapper-1">
+            <br>
+            <img src="imgs/eccv20captionface/teaser.jpg">
+        </div>
+
+        <div class="section dashed">
+            <h4>Overview</h4>
+            <div class="abstract justify-text-between">
+                The advances over the past several years have pushed the performance of face recognition 
+                to an amazing level. This great success, to a large extent, is built on top of millions 
+                of annotated samples. However, as we endeavor to take the performance to 
+                the next level, the reliance on annotated data becomes a major obstacle. 
+                We desire to explore an alternative approach, namely using captioned images 
+                for training, as an attempt to mitigate this difficulty.
+                Captioned images are widely available on the web, while the captions often 
+                contain the names of the subjects in the images. 
+                Hence, an effective method to leverage such data would significantly reduce the 
+                need of human annotations.
+                However, an important challenge along this way needs to be tackled: 
+                the names in the captions are often noisy and ambiguous, 
+                especially when there are multiple names in the captions
+                or multiple people in the photos. 
+                In this work, we propose a simple yet effective method, which trains 
+                a face recognition model by progressively expanding the labeled set 
+                via both selective propagation and caption-driven expansion.
+                We build a large-scale dataset of captioned images, 
+                which contain 6.3M faces from 305K subjects.
+                Our experiments show that using the proposed method, we can 
+                train a state-of-the-art face recognition model 
+                without manual annotation (99.65% in LFW). 
+                This shows the great potential of caption-supervised face recognition.  
+            </div>
+        </div>
+
+
+        <div class="section dashed">
+            <h4>Dataset</h4>
+            <h5>Statistics</h5>
+            
+            <center><br><img src="imgs/eccv20captionface/dataset_stat.png" width="80%"></center>
+        
+            <h5>Sample</h5>
+            <center><br><img src="imgs/eccv20captionface/dataset_sample.png" width="80%"></center>
+        
+        </div>
+
+
+        <div class="section dashed">
+            <h4>Materials</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="griditem">
+                        <a href="" target="_blank" class="imageLink" >
+                            <img src="imgs/eccv20captionface/paper.png"><br>
+                            Paper [Comming Soon]</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="griditem">
+                        <a href="" target="_blank"
+                            class="image-link">
+                            <img src="imgs/share/github_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Code [Comming Soon]</span></a>
+                    </div>
+                </div>
+                <div class=" col-md-4">
+                    <div class="griditem">
+                        <a href="" target="_blank" class="image-link">
+                            <img src="imgs/share/dataset_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Dataset [Comming Soon]</span></a>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        </div>
+        
+        <div class="section dashed">
+            <h4>Citation</h4>
+            <div class="code-light-bg">
+                <pre><code>@inproceedings{huang2020caption,
+    title={Caption-Supervised Face Recognition: Training a State-of-the-Art Face Model without Manual Annotation},
+    author={Huang, Qingqiu and Yang, Lei and Huang, Huaiyi and Wu, Tong and Lin, Dahua},
+    booktitle = {The European Conference on Computer Vision (ECCV)}, 
+    year={2020}
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h4>Contact</h4>
+            <a href="http://qqhuang.cn/" target="_blank">Qingqiu Huang</a>:
+            <span class="color-light">hq016 [AT] ie.cuhk.edu.hk</span>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            &copy <a href="http://mmlab.ie.cuhk.edu.hk" target="_blank" class="text-warning">Multimedia Lab</a>, The
+            Chinese University of
+            Hong Kong
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript " src="../js/jquery.min.js "></script>
+
+</html>

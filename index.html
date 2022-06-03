@@ -1,3 +1,3295 @@
-<meta http-equiv="refresh" content="0; url=http://movienet.site" />
-<p>Redirecting...</p>
-<p><a href="http://movienet.site">If you browser does not redirect you to a new site, please click here.</a></p>
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Meta tags for search engines to crawl -->
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="MovieNet -- A holistic dataset for movie understanding.">
+	<meta name="keywords" content="movienet, dataset, mmlab, movie, deep learning, video analysis, computer vision">
+	<link rel="author" href="http://xiongyu.me/home">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+		integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/ulg/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script> -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script> -->
+	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+		integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+		crossorigin=""></script> -->
+
+	<!-- Title and Icon -->
+	<title>MovieNet</title>
+	<link rel="icon" href="src/imgs/movienet_logo.png" />
+
+	<!-- include css -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="css/index.css?ver=20200601">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<script src="js/annimations.js?ver=20200601"></script>
+	<script src="js/responsive.js?ver=20200601"></script>
+
+
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120923788-2"></script> -->
+	<!-- <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"> -->
+	<!-- <script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'UA-120923788-2');
+	</script> -->
+
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-light  fixed-top shadow" style="background-color: #ffffff;" id="nav-bar">
+		<div class=" col-xl-2  col-md-2 col-2">
+			<a class="navbar-brand pull-right color-cayan" href="#banner" onclick="slideTo('banner'); return false;">
+				<img src="src/imgs/movienet_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+				<b>MovieNet</b>
+			</a>
+		</div>
+
+		<div class="col-xl-6 col-md-6 col-6">
+			<div class="collapse navbar-collapse " id="nav-links1">
+				<div class="navbar-nav ">
+					<!-- <a class="nav-item nav-link text-primary" href="#banner-container-outer" onclick="slideTo('banner-container-outer');  return false;">Home</a> -->
+					<a class="nav-item nav-link text-grey" href="#about"
+						onclick="slideTo('about');  return false;">About</a>
+					<a class="nav-item nav-link text-grey" href="#expo"
+						onclick="slideTo('expo');  return false;">Explore</a>
+					<a class="nav-item nav-link text-grey" href="#download"
+						onclick="slideTo('download');  return false;">Download</a>
+					<a class="nav-item nav-link text-grey" href="#project"
+						onclick="slideTo('project');  return false;">Project</a>
+					<!-- <a class="nav-item nav-link text-grey" href="#challenge"
+						onclick="slideTo('challenge');  return false;">Challenge</a> -->
+					<a class="nav-item nav-link text-grey" href="#news"
+						onclick="slideTo('news');  return false;">News</a>
+					<a class="nav-item nav-link text-grey" href="#contact"
+						onclick="slideTo('contact');  return false;">Contact</a>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="offset-xl-1 col-xl-2 offset-xl-1   offset-md-1 col-md-3 col-0">
+			<div class="collapse navbar-collapse pull-right" id="nav-links2">
+				<div class="navbar-nav">
+
+					<a class="nav-item nav-link text-grey" href="http://docs.movienet.site" target="_blank">
+						<span>Docs
+							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+								viewBox="0 0 100 100" class="svg-icon">
+								<path fill="currentColor"
+									d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+								</path>
+								<polygon fill="currentColor"
+									points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+								</polygon>
+							</svg>
+						</span>
+					</a>
+
+					<a class="nav-item nav-link text-grey" href="https://github.com/movienet" target="_blank">
+						<span>Github
+							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+								viewBox="0 0 100 100" class="svg-icon">
+								<path fill="currentColor"
+									d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+								</path>
+								<polygon fill="currentColor"
+									points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+								</polygon>
+							</svg>
+							<!-- <img src="src/imgs/link_out.svg" onload="SVGInject(this)" class="svg-icon text-grey" /> -->
+						</span>
+					</a>
+
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!-- <div id="banner-container-outer"> -->
+	<!-- <div id="banner-container-inner"> -->
+	<!-- <img src="src/imgs/banner.png" id="banner-im">
+		 -->
+	<div class="banner-bg" id="banner">
+		<div class="flying-text" id='banner-text'>
+			<div id='banner-text-main' class="color-cyan-dark xl-font"><b>MovieNet</b></div>
+			<div id='banner-text-sub' class="color-grey">A holistic dataset for movie understanding</div>
+			<br />
+			<br />
+			<button type="button" class=" btn btn-success btn-rounded" onclick="slideTo('download'); return false;">
+				&nbsp&nbspDownload&nbsp&nbsp</button>
+		</div>
+		<div id="banner-im-grid">
+			<div class="flying-text2" id='banner-text'>
+				<img class="banner-im" src="https://i.pinimg.com/236x/f3/2a/79/f32a794f9829b3cd8e22f8b746202dbd.jpg" />
+			</div>
+			<div class="flying-text3" id='banner-text'>
+				<img class="banner-im" src="https://i.pinimg.com/236x/f3/2a/79/f32a794f9829b3cd8e22f8b746202dbd.jpg" />
+			</div>
+			<div class="flying-text4" id='banner-text'>
+				<img class="banner-im" src="https://i.pinimg.com/236x/f3/2a/79/f32a794f9829b3cd8e22f8b746202dbd.jpg" />
+			</div>
+			<div class="flying-text5" id='banner-text'>
+				<img class="banner-im" src="https://i.pinimg.com/236x/f3/2a/79/f32a794f9829b3cd8e22f8b746202dbd.jpg" />
+			</div>
+		</div>
+	</div>
+	<!-- </div> -->
+
+	<div class="container">
+		<div class="row" id="about">
+
+			<!-- <div class="offset-xl-2 col-xl-8 offset-xl-2 offset-md-2 col-md-8 offset-md-2 col-12">
+				<p class="titles">
+					Short Biography
+				</p>
+				<p id='debug'></p>
+				<hr />
+			</div> -->
+			<div class="col-xl-12 col-md-12 col-12">
+				<div class="row abs-mg-bot-xl text-center justify-content-between">
+					<div class="abs-mg-top-hg  col-xl-3 col-lg-3 col-md-3 col-12">
+						<div class="abs-mg-bot"><img src='src/imgs/hdd.png' class="icon"></div>
+						<div class="md-font bold abs-mg-bot-ti">Massive Data</div>
+						<div class="sm-font color-light width-limit-250 ">
+							<div>1.1K Movies, 60K trailers, 375K meta etc., all freely avaliable at
+								MovieNet.</div>
+						</div>
+					</div>
+					<div class="abs-mg-top-hg  col-xl-3 col-lg-3 col-md-3 col-12">
+						<div class="abs-mg-bot"><img src='src/imgs/anno.png' class="icon"></div>
+						<div class="md-font bold abs-mg-bot-ti">Rich Annotation</div>
+						<div class="sm-font color-light width-limit-250">Various annotations
+							of actors, scene and cinematic styles are provided.
+						</div>
+					</div>
+					<div class="abs-mg-top-hg col-xl-3 col-lg-3 col-md-3 col-12">
+						<div class="abs-mg-bot"><img src='src/imgs/code.png' class="icon"></div>
+						<div class="md-font bold abs-mg-bot-ti">Diverse Tasks</div>
+						<div class="sm-font color-light width-limit-250">Support several vision and language
+							tasks, from low-level to high-level.</div>
+					</div>
+					<div class="abs-mg-top-hg col-xl-3 col-lg-3 col-md-3 col-12">
+						<div class="abs-mg-bot"><img src='src/imgs/toolbox.png' class="icon"></div>
+						<div class="md-font bold abs-mg-bot-ti">Opensource Toolbox</div>
+						<div class="sm-font color-light width-limit-250">Easy-to-use toolbox designed for
+							experiments and data processing.</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row" id="expo">
+			<div class="col-xl-12 col-md-12 col-12 abs-pd-top-md">
+				<hr />
+				<p class="lg-font bold">
+					Explore MovieNet
+				</p>
+			</div>
+			<div class="col-xl-12 col-md-12 col-12">
+				<p class="md-font bold">
+					Data in MovieNet
+				</p>
+			</div>
+			<div class="col-xl-12 col-md-12 col-12">
+				<div class="row flex-nowrap abs-mg-bot-lg text-center justify-content-start overflowx">
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold"> 🎬&nbsp Movie</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Movies</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+									There are 1100 movies in MovieNet. We select the movie that covers a wide range
+									of years, countries and genres.</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-data-movie">Examples & Statistics</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class=" col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">🎞️&nbsp Trailer</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body  sm-font">
+								<!-- <h5 class="card-title">Card title</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+									There are 60K trailers from 33K unique movies in MovieNet.
+									The url links of the trailers are provided.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-data-trailer">Examples & Statistics</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap">
+							 -->
+							<div class="card-header bold">📸 &nbsp Photo</div>
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Card title</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+									There are 3.9M photos from 7 types in MovieNet.
+									We provide all the photos as well as the processed results.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-data-photo">Examples & Statistics</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">📒&nbsp Text</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Card title</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+									There are 3 main types of texts in MovieNet, namely
+									<i>Subtitle</i>,
+									<i>Synopsis</i>
+									and
+									<i>Script</i>.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-data-text">Examples & Statistics</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">📝&nbsp Meta Data</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Card title</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+									MovieNet contains meta data of 375K movies. Each meta data is written
+									in a json file.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-data-meta">Examples & Statistics</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Anno in movienet -->
+			<div class="col-xl-12 col-md-12 col-12">
+				<p class="md-font bold">
+					Annotation in MovieNet
+				</p>
+			</div>
+			<div class="col-xl-12 col-md-12 col-12">
+				<div class="row flex-nowrap abs-mg-bot-lg text-center justify-content-start overflowx">
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">🏃‍♀️&nbsp Character BBox & ID</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Character BBox & ID</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+									Character plays an important role in movie anlysis, we annotate 1.1M instances of
+									3087 unique credited cast.</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-anno-character">See Examples</a>
+
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">🏝&nbsp Scene Segmentation</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Scene Segmentation</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+									We annotate scene boundaries to support the researches on scene
+									segmentation, resulting in 42K scenes.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-anno-sceneseg">See Examples</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">👊&nbsp Action & Place Tags</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Scene Segmentation</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+									We annotate 42K
+									segments with 19.6K place tags and 45K action tags. There are 80 action classes
+									and 90 place classes.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-anno-tags">See Examples</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">📽️ &nbsp Shot Cinematic Style</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Shot Cinematic Style</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+									We annotated the commonly used two kinds of cinematic tags of a shot,
+									shot scale and shot movement.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-anno-shottype">See Examples</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">📰 &nbsp Movie & Synopsis</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Movie & Synopsis</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+									To support the movie segment retrieval task, we manually associate movie
+									segments and synopsis paragraphs.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-anno-synopsis">See Examples</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Anno in movienet, end -->
+			<div class="col-xl-12 col-md-12 col-12">
+				<p class="md-font bold">
+					Benchmarks
+				</p>
+			</div>
+			<div class="col-xl-12 col-md-12 col-12">
+				<div class="row flex-nowrap abs-mg-bot-lg text-center justify-content-left overflowx">
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card bgc-black">
+							<img class="card-img-top" src="src/imgs/character_det_id.png" alt=" Card image cap">
+							<div class="abs-mg-bot-ti abs-mg-top-ti">
+								<!-- <h5 class="card-title">Movie Synopsis Association</h5> -->
+								<div class="bold color-white">Detection & Identification
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card bgc-black">
+							<img class="card-img-top " src="src/imgs/scene_seg.png" alt=" Card image cap">
+							<div class="abs-mg-bot-ti abs-mg-top-ti">
+								<!-- <h5 class="card-title">Movie Synopsis Association</h5> -->
+								<div class="bold color-white">Scene Segmentation
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card bgc-black">
+							<img class="card-img-top " src="src/imgs/scene_tags.png" alt=" Card image cap">
+							<div class="abs-mg-bot-ti abs-mg-top-ti">
+								<!-- <h5 class="card-title">Movie Synopsis Association</h5> -->
+								<div class="bold color-white">Scene Tag Prediction
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card bgc-black">
+							<img class="card-img-top " src="src/imgs/shottype.png" alt=" Card image cap">
+							<div class="abs-mg-bot-ti abs-mg-top-ti">
+								<!-- <h5 class="card-title">Movie Synopsis Association</h5> -->
+								<div class="bold color-white">Cinematic Style Prediction
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card bgc-black">
+							<img class="card-img-top " src="src/imgs/msa.png" alt=" Card image cap">
+							<div class="abs-mg-bot-ti abs-mg-top-ti">
+								<!-- <h5 class="card-title">Movie Synopsis Association</h5> -->
+								<div class="bold color-white">Movie Synopsis Association
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xl-12 col-md-12 col-12 ">
+				<div class="md-font bold">
+					Easy-to-Use Toolbox
+				</div>
+				<div class="color-light">We provide the following easy-to-use toolbox and codebase
+					for accessing, processing and managing the dataset, extracting features and
+					conducting experiments. (<a href="https://github.com/movienet" target="_blank">View All</a>)
+				</div>
+				<div class="abs-mg-top-ti"><span class="bold">movienet-tools</span> (<a
+						href="https://github.com/movienet/movienet-tools" target="_blank">View on
+						GitHub</a>)</div>
+				<div class="color-light">
+					Basic Toolbox for movie understanding reasearch.
+					movienet-tools provides tools for:
+					<br />
+					1. Crawler of movie related websites. For example, IMDb.
+					<br />
+					2. Useful tools for video/image/audio preprocessing, e.g. shot detector.
+					<br />
+					3. Multimodality feature extractors (e.g. action feature extractor) for experiment preparation.
+				</div>
+				<div class="abs-mg-top-ti"><span class="bold abs-mg-top-ti">movienet-core</span> (<a
+						href="https://github.com/movienet/movienet" target="_blank">View on
+						GitHub</a>)</div>
+				<div class="color-light">
+					The python package <code>movienet-core</code> contains multiple modules for processing
+					the dataset, including:
+					<br />
+					1. Core representation and parsers for data and annotation in MovieNet.
+					<br />
+					2. Python extension utilities for movie analysis.
+				</div>
+				<div class="abs-mg-top-ti"><span class="bold abs-mg-top-ti">movienet-host</span> (<a
+						href="https://github.com/movienet/movienet-host" target="_blank">View on
+						GitHub</a>)</div>
+				<div class="color-light">
+					The python package <code>movienet-host</code> is a flexiable MovieNet data manager
+					that help you deploy MovieNet data server remotely or locally.
+				</div>
+			</div>
+
+			<div class="col-xl-12 col-md-12 col-12">
+				<div class="md-font bold abs-pd-top-md">
+					Tutorial and Documentation
+				</div>
+				<div class="color-light">
+					To help anyone quickly starts with researches on MovieNet, we provided
+					detailed
+					<a href="http://docs.movienet.site/" target="_blank">tutorial and documentations</a>
+					including:
+					<br />
+					1. Wiki: Foundamental knowledges of movie analysis and details about MovieNet.
+					<br />
+					2. documents for codebases like <code>movienet-tools</code>, <code>movienet</code>, etc.
+				</div>
+			</div>
+
+		</div>
+
+
+
+		<div class="row" id="download">
+			<div class="col-xl-12 col-md-12 col-12 abs-pd-top-md">
+				<hr />
+				<p class="lg-font bold">
+					Download MovieNet
+				</p>
+				<div class="d-block d-sm-none text-danger abs-mg-bot-ti">Detected that you are browsing
+					this site on mobile, please download the data on desktop.</div>
+
+			</div>
+			<div class="d-none d-sm-block col-xl-12 col-md-12 col-12">
+				<div class="md-font bold">
+					Basic Download
+				</div>
+				<div class="color-light">
+					<div>Download all the data (<span class="color-highlight">excluding
+							movies</span>), annotation and pretrained features
+						through <a href="https://opendatalab.com/MovieNet/download">OpenDataLab</a>.
+						You will need to register an account and download the data under User Service Agreement and Privacy Policy.
+					</div>
+					<!-- <div class="abs-mg-top-ti bold color-grey">All in one zip</div>
+					<div>1. Download the whole dataset through the link(xxx TB)
+						<a href="#!" class="badge badge-success">Download</a>
+					</div> 
+					<div>
+						2. Or copy the wget command to your clipboard to download the whole dataset:
+					</div>
+					<pre
+						class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget movienet_download_url # url coming soon</code></pre>
+					-->
+					<div class="abs-mg-top-ti bold color-grey">Specifically, it contains the following:</div>
+					<div class="abs-mg-top-ti"><span class="bold">1. Annotation</span> (Last updated on 02/08/2020,
+						size: 53MB, after unzip: 881MB)
+					</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/annotation.v1.zip"
+							class="badge badge-info">Download</a> or
+					 	<pre class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/annotation.v1.zip # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">2. Meta</span> (Last updated on 06/08/2020,
+						size: 537MB, after unzip: 2.3GB)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/meta.v1.zip"
+							class="badge badge-info">Download</a> or
+						<pre class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/meta.v1.zip # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">3. Movie per-shot keyframes (240P)</span> (Last
+						updated on 29/08/2020, size: 161GB, after unzip: 161GB)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/movie1K.keyframes.240p.v1.zip"
+							class="badge badge-info">Download</a> or
+						<pre class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/movie1K.keyframes.240p.v1.zip # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">4. Movie List (1100)</span> (Last
+						updated on 29/08/2020, size: 10KB)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/list.v1.txt"
+							class="badge badge-info">Download</a> or
+						<pre class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/list.v1.txt # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">5. Movie1K train/val/test split</span> (Last
+						updated on 29/08/2020, size: 30KB)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/movie1K.split.v1.json"
+							class="badge badge-info">Download</a> or
+						<pre class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/movie1K.split.v1.json # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">6. Poster4M image meta information</span> (Last
+						updated on 02/09/2020, size: 1.3GB, one could download images from the urls provided in the json file.)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/poster4M.img_meta.v1.json"
+							class="badge badge-info">Download</a> or
+						<pre class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/poster4M.img_meta.v1.json # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">7. Subtitles (815 files) from movie1K</span> (Last
+						updated on 05/09/2020, size: 29.9MB, after unzip: 84.4MB)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/subtitle1K.v1.zip"
+							class="badge badge-info">Download</a> or
+						<pre class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/subtitle1K.v1.zip # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">8. Script (479 files) from movie1K</span> (Last
+						updated on 05/09/2020, size: 27.9MB, after unzip: 101.8MB)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/script1K.v1.zip"
+							class="badge badge-info">Download</a> or
+						<pre class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/script1K.v1.zip # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">9. Shot detection result for movie1K</span> (Last
+						updated on 05/09/2020, size: 20.9MB, after unzip: 50.7MB)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/movie1K.shot_detection.v1.zip"
+							class="badge badge-info">Download</a> or
+						<pre class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/movie1K.shot_detection.v1.zip # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">10. Audio feature for movie1K</span> (Last
+						updated on 06/09/2020, size: 89.7GB)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/movie1K.audio_feature.v1.zip"
+							class="badge badge-info">Download</a> or
+						<pre class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/movie1K.audio_feature.v1.zip # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">11. Place feature for movie1K</span> (Last
+						updated on 06/09/2020, size: 11GB)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/movie1K.place_feature.v1.zip"
+							class="badge badge-info">Download</a> or
+					<pre
+						class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/movie1K.place_feature.v1.zip # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">12. Video info for movie1K movies, including fps,
+							frame_count, etc</span> (Last 
+						updated on 09/09/2020, size: 118KB)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/movie1K.video_info.v1.json"
+							class="badge badge-info">Download</a> or
+					<pre
+						class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/movie1K.video_info.v1.json # version 1.0</code></pre> -->
+
+					<div class="abs-mg-top-ti"><span class="bold">13. Trailer 30K URLs</span> (Last
+						updated on 17/10/2020, size: 2.155MB)</div>
+						<!-- <a href="https://openmmlab.oss-cn-hangzhou.aliyuncs.com/datasets/movienet/trailer.urls.unique30K.v1.json"
+							class="badge badge-info">Download</a> or
+						<pre class="abs-mg-top-ti pretty"><code class="language-bash" data-lang="bash"> wget https://download.openmmlab.com/datasets/movienet/trailer.urls.unique30K.v1.json # version 1.0</code></pre> -->
+					
+
+					<!-- <div class="abs-mg-top-md">
+						If you would like to download single file, see here.
+					</div>
+					<div>
+						* Trailers (~10GB):
+						<a href="#" class="badge badge-success">Download (China)</a>
+						<a href="#" class="badge badge-success">Download (Global)</a>
+						<a href="#" class="badge badge-info">Copy wget-cmd (China)</a>
+						<a href="#" class="badge badge-info">Copy wget-cmd (Global)</a>
+					</div>
+					<div>
+						* Meta Information (~10GB):
+						<a href="#" class="badge badge-success">Download (China)</a>
+						<a href="#" class="badge badge-success">Download (Global)</a>
+						<a href="#" class="badge badge-info">Copy wget-cmd (China)</a>
+						<a href="#" class="badge badge-info">Copy wget-cmd (Global)</a>
+					</div>
+					<div>
+						For more single data, please refer to <a href="#">the tutorail</a> for help.
+					</div> -->
+
+				</div>
+			</div>
+
+			<div class="d-none d-sm-block  col-xl-12 col-md-12 col-12">
+				<div class="md-font bold abs-pd-top-md">
+					Download Movies
+				</div>
+				<div class="color-light">According to copyright restrictions, we plan to release movies under
+					very strict conditions. If you would like to download the movies, please see the instruction.
+					<a href="#!" class="badge badge-success">See Instruction and apply now (coming
+						soon)</a>
+				</div>
+				<div class="abs-pd-top-md color-light bold">FAQ: When do you plan to release the movies?
+				</div>
+				<div class="color-light">We've prepared the agreements for users to sign.
+					The lawyers have polished the agreement.
+					Currently we are waiting for approval from the university (CUHK) legal team.
+				</div>
+			</div>
+			
+			<div class="d-none d-sm-block col-xl-12 col-md-12 col-12">
+				<div class="md-font bold abs-pd-top-md">
+					Extra Download
+				</div>
+				<div class="color-light">If you would like to download the corresponding data of a perticualr
+					MovieNet related paper (e.g. Cast In Movies Dataset, CVPR18), please find the download option in
+					the project page of the paper.
+					(<a href="#project" class="stretched-link" onclick="slideTo('project'); return false;">See
+						Project
+						Section</a>)
+				</div>
+			</div>
+		</div>
+
+		<div class="row" id="project">
+			<div class="col-xl-12 col-md-12 col-12 abs-pd-top-md">
+				<hr />
+
+				<p class="lg-font bold">
+					MovieNet Projects
+				</p>
+			</div>
+
+			<div class="col-xl-12 col-md-12 col-12">
+				<div class="row abs-mg-bot-lg">
+					<div class="col-xl-12 col-12">
+						<p class="md-font bold">
+							Holistic Movie Understanding Dataset
+						</p>
+					</div>
+					<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+						<img src="src/imgs/pub/eccv20movienet.jpg" class="rel-90-im">
+					</div>
+					<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+
+						<div class="sl-font bold ">
+							MovieNet: A Holistic Dataset for Movie Understanding
+						</div>
+						<div class="color-light">
+							Qingqiu Huang*, Yu Xiong*, Anyi Rao, Jiaze Wang, Dahua Lin
+						</div>
+						<div class="abs-mg-bot-ti text-success">
+							European Conference on Computer Vision (ECCV), 2020
+							<span class="color-highlight">(Spotlight)</span>
+						</div>
+						<div class="abs-mg-bot-ti">
+							<a href="https://arxiv.org/pdf/2007.10937.pdf" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Paper</a>
+							<a href="projects/eccv20movienet.html" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Project Page</a>
+							<a href="https://github.com/movienet" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Code</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm" rel="popover"
+								onclick="copyBib(event, 'bib-eccv20movienet-code');  return false;"
+								id="btn-bib-eccv20movienet" data-clipboard-target="#bib-eccv20movienet-code">Copy
+								BibTeX
+								to Clipboard</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row abs-mg-bot-lg">
+					<div class="col-xl-12 col-12">
+						<p class="md-font bold">
+							Movie Cinematic Style Analysis
+						</p>
+					</div>
+					<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+						<img src="src/imgs/pub/eccv20shot.jpg" class="rel-90-im">
+					</div>
+					<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+
+						<div class="sl-font bold ">
+							A Unified Framework for Shot Type Classification Based on Subject Centric Lens
+						</div>
+						<div class="color-light">
+							Anyi Rao, Jiaze Wang, Linning Xu, Xuekun Jiang, Qingqiu Huang, Bolei Zhou, Dahua Lin
+						</div>
+						<div class="abs-mg-bot-ti text-success">
+							European Conference on Computer Vision (ECCV), 2020 <span class="color-highlight"></span>
+						</div>
+						<div class="abs-mg-bot-ti">
+							<a href="https://arxiv.org/pdf/2008.03548.pdf" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Paper</a>
+							<a href="projects/eccv20shot.html" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Project Page</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm disabled"
+								target="_blank">Code</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm" rel="popover"
+								onclick="copyBib(event, 'bib-eccv20shot-code');  return false;" id="btn-bib-eccv20shot"
+								data-clipboard-target="#bib-eccv20shot-code">Copy BibTeX
+								to Clipboard</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row abs-mg-bot-lg">
+					<div class="col-xl-12 col-12">
+						<p class="md-font bold">
+							Unsupervised Face Recognition
+						</p>
+					</div>
+					<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+						<img src="src/imgs/pub/eccv20captionface.jpg" class="rel-90-im">
+					</div>
+					<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+
+						<div class="sl-font bold ">
+							Caption-Supervised Face Recognition: Training a State-of-the-Art Face Model without
+							Manual
+							Annotation
+						</div>
+						<div class="color-light">
+							Qingqiu Huang, Lei Yang, Huaiyi Huang, Tong Wu, Dahua Lin
+						</div>
+						<div class="abs-mg-bot-ti text-success">
+							European Conference on Computer Vision (ECCV), 2020 <span class="color-highlight"></span>
+						</div>
+						<div class="abs-mg-bot-ti">
+							<a href="http://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123620137.pdf"
+								role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm"
+								target="_blank">Paper</a>
+							<a href="projects/eccv20captionface.html" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Project Page</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm disabled"
+								target="_blank">Code</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm" rel="popover"
+								onclick="copyBib(event, 'bib-eccv20captionface-code');  return false;"
+								id="btn-bib-eccv20captionface" data-clipboard-target="#bib-eccv20captionface-code">Copy
+								BibTeX
+								to Clipboard</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row abs-mg-bot-lg">
+					<div class="col-xl-12 col-12">
+						<p class="md-font bold">
+							Online Person Search
+						</p>
+					</div>
+					<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+						<img src="src/imgs/pub/eccv20onlineperson.jpg" class="rel-90-im">
+					</div>
+					<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+
+						<div class="sl-font bold ">
+							Online Multi-modal Person Search in Videos
+						</div>
+						<div class="color-light">
+							Jiangyue Xia, Anyi Rao, Qingqiu Huang, Linning Xu, Jiangtao Wen, Dahua Lin
+						</div>
+						<div class="abs-mg-bot-ti text-success">
+							European Conference on Computer Vision (ECCV), 2020 <span class="color-highlight"></span>
+						</div>
+						<div class="abs-mg-bot-ti">
+							<a href="http://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123570171.pdf"
+								role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm"
+								target="_blank">Paper</a>
+							<a href="projects/eccv20onlineperson.html" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Project Page</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm disabled"
+								target="_blank">Code</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm" rel="popover"
+								onclick="copyBib(event, 'bib-eccv20onlineperson-code');  return false;"
+								id="btn-bib-eccv20onlineperson"
+								data-clipboard-target="#bib-eccv20onlineperson-code">Copy BibTeX
+								to Clipboard</a>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row abs-mg-bot-lg">
+					<div class="col-xl-12 col-12">
+						<p class="md-font bold">
+							Movie Scene Temporal Segmentation
+						</p>
+					</div>
+					<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+						<img src="src/imgs/pub/cvpr20sceneseg.png" class="rel-90-im">
+					</div>
+					<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+
+						<div class="sl-font bold ">
+							A Local-to-Global Approach to Multi-modal Movie Scene Segmentation
+						</div>
+						<div class="color-light">
+							Anyi Rao, Linning Xu, Yu Xiong, Guodong Xu, Qingqiu Huang, Bolei Zhou, Dahua Lin
+						</div>
+						<div class="abs-mg-bot-ti text-success">
+							Computer Vision and Pattern Recognition (CVPR), 2020 <span class="color-highlight"></span>
+							<div class="color-light">
+								Also appear at <a href="https://sites.google.com/view/luv2020/home">LUV 2020
+									Workshop</a> (15-min talk)
+								and <a href="http://sightsound.org/"> Sight and Sound 2020 Workshop</a> (5-min talk)
+							</div>
+						</div>
+
+
+						<div class="abs-mg-bot-ti">
+							<a href="https://arxiv.org/abs/2004.02678" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Paper</a>
+							<a href="projects/cvpr20sceneseg.html" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Project Page</a>
+							<a href="https://github.com/AnyiRao/SceneSeg" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Code</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm" rel="popover"
+								onclick="copyBib(event, 'bib-cvpr20sceneseg-code');  return false;"
+								id="btn-bib-cvpr20sceneseg" data-clipboard-target="#bib-cvpr20sceneseg-code">Copy
+								BibTeX
+								to Clipboard</a>
+
+
+						</div>
+					</div>
+				</div>
+
+				<div class="row abs-mg-bot-lg">
+					<div class="col-xl-12 col-12">
+						<p class="md-font bold">
+							Movie Synopsis Association
+						</p>
+					</div>
+					<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+						<img src="src/imgs/pub/iccv19moviesyn.jpg" class="rel-90-im">
+					</div>
+					<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+
+						<div class="sl-font bold ">
+							A Graph-based Framework to Bridge Movies and Synopses
+						</div>
+						<div class="color-light">
+							Yu Xiong, Qingqiu Huang, Lingfeng Guo, Hang Zhou, Bolei Zhou, Dahua Lin
+						</div>
+						<div class="abs-mg-bot-ti text-success">
+							International Conference in Computer Vision (ICCV), 2019 <span
+								class="color-highlight">(Oral)</span>
+						</div>
+						<div class="abs-mg-bot-ti">
+							<a href="http://openaccess.thecvf.com/content_ICCV_2019/papers/Xiong_A_Graph-Based_Framework_to_Bridge_Movies_and_Synopses_ICCV_2019_paper.pdf"
+								role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm"
+								target="_blank">Paper</a>
+							<a href="projects/iccv19moviesyn.html" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Project Page</a>
+							<a href="https://github.com/ycxioooong/MovieSynopsisAssociation" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Code</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm" rel="popover"
+								onclick="copyBib(event, 'bib-iccv19moviesyn-code');  return false;"
+								id="btn-bib-iccv19moviesyn" data-clipboard-target="#bib-iccv19moviesyn-code">Copy
+								BibTeX
+								to Clipboard</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row abs-mg-bot-lg">
+					<div class="col-xl-12 col-md-12 col-12">
+						<p class="md-font bold">
+							Person Search
+						</p>
+					</div>
+					<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+						<img src="src/imgs/pub/eccv18person.png" class="rel-90-im">
+					</div>
+					<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+
+						<div class="sl-font bold ">
+							Person Search in Videos with One Portrait Through Visual and Temporal Links
+						</div>
+						<div class="color-light">
+							Qingqiu Huang, Wentao Liu, Dahua Lin
+						</div>
+						<div class="abs-mg-bot-ti text-success">
+							European Conference on Computer Vision (ECCV), 2018
+						</div>
+						<div class="abs-mg-bot-ti">
+							<a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Qingqiu_Huang_Person_Search_in_ECCV_2018_paper.pdf"
+								role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm"
+								target="_blank">Paper</a>
+							<a href="projects/eccv18person.html" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Project Page</a>
+							<a href="https://github.com/hqqasw/person-search-PPCC" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Code</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm" rel="popover"
+								onclick="copyBib(event, 'bib-eccv18person-code');  return false;"
+								id="btn-bib-eccv18person" data-clipboard-target="#bib-eccv18person-code">Copy BibTeX
+								to Clipboard</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row abs-mg-bot-lg">
+					<div class="col-xl-12 col-md-12 col-12">
+						<p class="md-font bold">
+							Person Recognition
+						</p>
+					</div>
+					<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+						<img src="src/imgs/pub/cvpr18unifying.png" class="rel-90-im">
+					</div>
+					<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+
+						<div class="sl-font bold ">
+							Unifying Identification and Context Learning for Person Recognition
+						</div>
+						<div class="color-light">
+							Qingqiu Huang,
+							Yu Xiong, Dahua Lin
+						</div>
+						<div class="abs-mg-bot-ti text-success">
+							Computer Vision and Pattern Recognition (CVPR), 2018
+						</div>
+						<div class="abs-mg-bot-ti">
+							<a href="https://arxiv.org/pdf/1806.03084.pdf" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Paper</a>
+							<a href="projects/cvpr18unifying.html" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Project Page</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm" rel="popover"
+								onclick="copyBib(event, 'bib-cvpr18unifying-code');  return false;"
+								id="btn-bib-cvpr18unifying" data-clipboard-target="#bib-cvpr18unifying-code">Copy
+								BibTeX
+								to Clipboard</a>
+							<button type="button" class="btn btn-outline-dark btn-sm"
+								style="display: none;">Code</button>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="row abs-mg-bot-lg">
+					<div class="col-xl-12 col-md-12 col-12">
+						<p class="md-font bold">
+							Trailer Analysis
+						</p>
+					</div>
+					<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+						<img src="src/imgs/pub/arxiv18trailer.png" class="rel-90-im">
+					</div>
+					<div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+
+						<div class="sl-font bold ">
+							From Trailers to Storylines: An Efficient Way to Learn from Movies
+						</div>
+						<div class="color-light">
+							Qingqiu Huang, Yuanjun Xiong, Yu Xiong, Yuqi Zhang, Dahua Lin
+						</div>
+						<div class="abs-mg-bot-ti text-success">
+							Arxiv:1806.05341, 2018
+						</div>
+						<div class="abs-mg-bot-ti">
+							<a href="https://arxiv.org/pdf/1806.05341.pdf" role="button"
+								class="abs-mg-bot-ti btn btn-outline-dark btn-sm" target="_blank">Paper</a>
+							<a href="#" role="button" class="abs-mg-bot-ti btn btn-outline-dark btn-sm" rel="popover"
+								onclick="copyBib(event, 'bib-arxiv18trailer-code');  return false;"
+								id="btn-bib-arxiv18trailer" data-clipboard-target="#bib-arxiv18trailer-code">Copy
+								BibTeX
+								to Clipboard</a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+		<!-- 
+		<div class="row" id="challenge">
+			<div class="col-xl-12 col-md-12 col-12 abs-pd-top-md">
+				<hr />
+
+				<p class="lg-font bold">
+					Challenges
+				</p>
+			</div>
+
+			<div class="col-xl-12 col-md-12 col-12">
+				<div class="row abs-mg-bot-lg">
+					<div class="col-xl-12 col-12">
+						<p class="md-font bold">
+							Movie Scene Temporal Segmentation
+						</p>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+		<div class="row" id="news">
+			<div class="col-xl-12 col-md-12 col-12 abs-pd-top-md">
+				<hr />
+				<p class="lg-font bold">
+					News
+				</p>
+			</div>
+
+			<div class="col-xl-12 col-md-12 col-12">
+				<div><span class="badge badge-dark">Jul. 2020</span> <code>movienet-tools</code>
+					v0.0.1 is released.</div>
+				<div><span class="badge badge-dark">Jul. 2020</span> MovieNet
+					Dataset v0.1 is released.</div>
+			</div>
+
+		</div>
+
+
+
+		<div class="row" id="contact">
+			<div class="col-xl-12 col-md-12 col-12 abs-pd-top-md">
+				<hr />
+				<p class="lg-font bold">
+					Contact Us
+				</p>
+			</div>
+
+			<div class="col-xl-12 col-md-12 col-12 abs-mg-bot-md">
+				<div>
+					<span class="bold">Huang Qingqiu (黄青虬):</span>&nbsp;&nbsp;
+					<span class="color-grey">hq016@ie.cuhk.edu.hk</span>
+					<span>&nbsp;|&nbsp;</span>
+					<span><a href='http://qqhuang.cn/' target="_blank" class="stretched-link">Homepage
+						</a>
+					</span>
+					<span>&nbsp;|&nbsp;</span>
+				</div>
+				<div>
+					<span class="bold">Xiong Yu (熊宇):</span>&nbsp;&nbsp;
+					<span class="color-grey">xy017@ie.cuhk.edu.hk</span>
+					<span>&nbsp;|&nbsp;</span>
+					<span><a href='http://www.xiongyu.me/' target="_blank" class="stretched-link">Homepage
+						</a>
+					</span>
+					<span>&nbsp;|&nbsp;</span>
+				</div>
+				<div>
+					<span class="bold">Rao Anyi (饶安逸):</span>&nbsp;&nbsp;
+					<span class="color-grey">ra018@ie.cuhk.edu.hk</span>
+					<span>&nbsp;|&nbsp;</span>
+					<span><a href='http://anyirao.com/' target="_blank" class="stretched-link">Homepage
+						</a>
+					</span>
+					<span>&nbsp;|&nbsp;</span>
+				</div>
+				<div class='abs-mg-top-sm'>
+					We find that some e-mails sent to <span class='bold'>ie.cuhk.edu.hk</span> will be identified as
+					spam mail and <span class='bold'>directly deleted</span> by our department mail system.
+					So if we do not reply your e-mail, please contact <span class='bold'>movienet.mmlab@gmail.com</span>
+					since the original e-mail
+					sent to the above addresses maybe invisible to us without any notification.
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="container-fluid">
+		<div class="row" id="foot">
+			<div class="offset-xl-3 col-xl-6 offset-xl-3  offset-md-2 col-md-8 offset-md-2 col-12">
+				<p class="subcontents" align="center" style="color: white;">
+					&copy; 2020, <a href='http://openmmlab.org/' target="_blank"
+						class="stretched-link text-warning">OpenMMLab</a>,
+					by
+					<a href='http://mmlab.ie.cuhk.edu.hk' target="_blank" class="stretched-link text-warning">
+						MMLab, CUHK</a>.
+					Last Update
+					in
+					July
+					2020.
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Popover elements -->
+	<div class="popover-ele">
+		<div class="card" id="bib-eccv20movienet">
+			<div class="card-header">
+				BibTeX for
+				<b>
+					<i>MovieNet: A Holistic Dataset for Movie Understanding</i>
+				</b>
+			</div>
+			<div class="card-body">
+				<pre><code id="bib-eccv20movienet-code" class="nohighlight">@inproceedings{huang2020movienet,
+	title={MovieNet: A Holistic Dataset for Movie Understanding},
+	author={Huang, Qingqiu and Xiong, Yu and Rao, Anyi and Wang, Jiaze and Lin, Dahua},
+	booktitle = {The European Conference on Computer Vision (ECCV)}, 
+	year={2020}
+}
+</code></pre>
+			</div>
+		</div>
+	</div>
+
+	<div class="popover-ele">
+		<div class="card" id="bib-eccv20shot">
+			<div class="card-header">
+				BibTeX for
+				<b>
+					<i>A Unified Framework for Shot Type Classification Based on Subject Centric Lens</i>
+				</b>
+			</div>
+			<div class="card-body">
+				<pre><code id="bib-eccv20shot-code" class="nohighlight">@inproceedings{rao2020unified,
+	title={A Unified Framework for Shot Type Classification Based on Subject Centric Lens},
+	author={Rao, Anyi and Wang, Jiaze and Xu, Linning and Jiang, Xuekun and Huang, Qingqiu and Zhou, Bolei and Lin, Dahua},
+	booktitle = {The European Conference on Computer Vision (ECCV)}, 
+	year={2020}
+}
+</code></pre>
+			</div>
+		</div>
+	</div>
+
+	<div class="popover-ele">
+		<div class="card" id="bib-eccv20captionface">
+			<div class="card-header">
+				BibTeX for
+				<b>
+					<i>Caption-Supervised Face Recognition: Training a State-of-the-Art Face Model without Manual
+						Annotation</i>
+				</b>
+			</div>
+			<div class="card-body">
+				<pre><code id="bib-eccv20captionface-code" class="nohighlight">@inproceedings{huang2020caption,
+	title={Caption-Supervised Face Recognition: Training a State-of-the-Art Face Model without Manual Annotation},
+	author={Huang, Qingqiu and Yang, Lei and Huang, Huaiyi and Wu, Tong and Lin, Dahua},
+	booktitle = {The European Conference on Computer Vision (ECCV)}, 
+	year={2020}
+}
+</code></pre>
+			</div>
+		</div>
+	</div>
+
+	<div class="popover-ele">
+		<div class="card" id="bib-eccv20onlineperson">
+			<div class="card-header">
+				BibTeX for
+				<b>
+					<i>Online Multi-modal Person Search in Videos</i>
+				</b>
+			</div>
+			<div class="card-body">
+				<pre><code id="bib-eccv20onlineperson-code" class="nohighlight">@inproceedings{xia2020online,
+	title={Online Multi-modal Person Search in Videos},
+	author={Xia, Jiangyue and Rao, Anyi and Xu, Linning and Huang, Qingqiu and Wen, Jiangtao and Lin, Dahua},
+	booktitle = {The European Conference on Computer Vision (ECCV)}, 
+	year={2020}
+}
+</code></pre>
+			</div>
+		</div>
+	</div>
+
+	<div class="popover-ele">
+		<div class="card" id="bib-cvpr20sceneseg">
+			<div class="card-header">
+				BibTeX for
+				<b>
+					<i>A Local-to-Global Approach to Multi-modal Movie Scene Segmentation</i>
+				</b>
+			</div>
+			<div class="card-body">
+				<pre><code id="bib-cvpr20sceneseg-code" class="nohighlight">@inproceedings{rao2020local,
+	title={A Local-to-Global Approach to Multi-modal Movie Scene Segmentation},
+	author={Rao, Anyi and Xu, Linning and Xiong, Yu and Xu, Guodong and Huang, Qingqiu and Zhou, Bolei and Lin, Dahua},
+	booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+	pages={10146--10155},
+	year={2020}
+}
+</code></pre>
+			</div>
+		</div>
+	</div>
+
+	<div class="popover-ele">
+		<div class="card" id="bib-iccv19moviesyn">
+			<div class="card-header">
+				BibTeX for
+				<b>
+					<i>A Graph-based Framework to Bridge Movies and Synopses</i>
+				</b>
+			</div>
+			<div class="card-body">
+				<pre><code id="bib-iccv19moviesyn-code" class="nohighlight">@InProceedings{Xiong_2019_ICCV,
+	author = {Xiong, Yu and Huang, Qingqiu and Guo, Lingfeng and Zhou, Hang and Zhou, Bolei and Lin, Dahua},
+	title = {A Graph-Based Framework to Bridge Movies and Synopses},
+	booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+	month = {October},
+	year = {2019}
+}
+</code></pre>
+			</div>
+		</div>
+	</div>
+
+	<div class="popover-ele">
+		<div class="card" id="bib-eccv18person">
+			<div class="card-header">
+				BibTeX for
+				<b>
+					<i>Person Search in Videos with One Portrait Through Visual and Temporal Links</i>
+				</b>
+			</div>
+			<div class="card-body">
+				<pre><code id="bib-eccv18person-code" class="nohighlight">@inproceedings{huang2018person,
+	title={Person Search in Videos with One Portrait Through Visual and Temporal Links},
+	author={Huang, Qingqiu and Liu, Wentao and Lin, Dahua},
+	booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
+	pages={425--441},
+	year={2018}
+}
+</code></pre>
+			</div>
+		</div>
+	</div>
+
+	<div class="popover-ele">
+		<div class="card" id="bib-cvpr18unifying">
+			<div class="card-header">
+				BibTeX for
+				<b>
+					<i>Unifying Identification and Context Learning for Person Recognition</i>
+				</b>
+			</div>
+			<div class="card-body">
+				<pre><code id="bib-cvpr18unifying-code" class="nohighlight">@InProceedings{Huang_2018_CVPR,
+	author = {Huang, Qingqiu and Xiong, Yu and Lin, Dahua},
+	title = {Unifying Identification and Context Learning for Person Recognition},
+	booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+	month = {June},
+	year = {2018}
+}
+</code></pre>
+			</div>
+		</div>
+	</div>
+
+	<div class="popover-ele">
+		<div class="card" id="bib-arxiv18trailer">
+			<div class="card-header">
+				BibTeX for
+				<b>
+					<i>From Trailers to Storylines: An Efficient Way to Learn from Movies</i>
+				</b>
+			</div>
+			<div class="card-body">
+				<pre><code id="bib-arxiv18trailer-code" class="nohighlight">@article{huang2018trailers,
+	title={From Trailers to Storylines: An Efficient Way to Learn from Movies},
+	author={Huang, Qingqiu and Xiong, Yuanjun and Xiong, Yu and Zhang, Yuqi and Lin, Dahua},
+	journal={arXiv preprint arXiv:1806.05341},
+	year={2018}
+}
+</code></pre>
+			</div>
+		</div>
+	</div>
+	<!-- end of popover items -->
+
+	<!-- Modals -->
+	<!-- Modal Data Movie-->
+	<div class="modal fade " id="modal-data-movie" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-width-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="md-font bold" id="exampleModalLabel">Example of movies in MovieNet</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body ">
+					<div class="bold">
+						Example Video
+					</div>
+					<div class="color-light">
+						Example clip "flying" from movie <i>Titanic</i>.
+					</div>
+					<div align="center">
+						<!-- <video src="https://youtu.be/KqZNW-rh0ZM"></video> -->
+						<video class="xl-media" controls>
+							<source src="http://movie.mmlab.site/src/movienet/data_movie_titanic_clip_flying.mp4"
+								type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<br />
+					<div class="bold">
+						Statistics
+					</div>
+					<div class="color-light">
+						We show the distribution of release year, countries and genres for the 1, 100 movies in
+						MovieNet (y-axis of country and genre in log scale).
+					</div>
+					<div align="center">
+						<img class="lg-media" src="src/imgs/examples/data_movie_dist.png" />
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal Data Trailer-->
+	<div class="modal fade " id="modal-data-trailer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-width-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="md-font bold" id="exampleModalLabel">Example of trailers in MovieNet</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body ">
+					<div class="bold">
+						Example Video
+					</div>
+					<div class="color-light">
+						Here we show three different trailers from movie <i>Titanic</i>.
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-12">
+							<!-- <video src="https://youtu.be/KqZNW-rh0ZM"></video> -->
+							<video class="xl-media" controls>
+								<source src="src/imgs/examples/titanic_trailer_04.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+						<div class="col-md-4 col-12">
+							<!-- <video src="https://youtu.be/KqZNW-rh0ZM"></video> -->
+							<video class="xl-media" controls>
+								<source src="src/imgs/examples/titanic_trailer_02.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+						<div class="col-md-4 col-12">
+							<!-- <video src="https://youtu.be/KqZNW-rh0ZM"></video> -->
+							<video class="xl-media" controls>
+								<source src="src/imgs/examples/titanic_trailer_03.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+					</div>
+					<br />
+					<div class="bold">
+						Statistics
+					</div>
+					<div class="color-light">
+						The distribution of durations are shown below:
+					</div>
+					<div align="center">
+						<img class="lg-media" src="src/imgs/examples/data_trailer_dist.png" />
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Modal Data Photo-->
+	<div class="modal fade " id="modal-data-photo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-width-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="md-font bold" id="exampleModalLabel">Examples and statistics of photots in MovieNet
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body ">
+					<div class="bold">
+						Statistics
+					</div>
+					<div class="color-light">
+						There are 7 types of photos in MovieNet, namely,
+						<i>publicity</i>,
+						<i>still frame</i>,
+						<i>event</i>,
+						<i>poster</i>,
+						<i>behind scene</i>,
+						<i>product</i>,
+						<i>production art</i>.
+						The statistics of these photos are shown below:
+					</div>
+					<div align="center">
+						<img class="sm-media" src="src/imgs/examples/phototype.png" />
+					</div>
+					<br />
+					<div class="bold">
+						Example Photo
+					</div>
+					<div class="color-light">
+						Here we show samples for different types of photos in MovieNet.
+					</div>
+					<div align="center">
+						<img class="lg-media" src="src/imgs/examples/sample_photo.png" />
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal Data Text-->
+	<div class="modal fade " id="modal-data-text" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-width-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="md-font bold" id="exampleModalLabel">Examples of script, scynopsis and subtitle in
+						MovieNet</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body ">
+					<div class="bold">
+						Example
+					</div>
+					<div class="color-light">
+						Here we show the fast forward clip of "you jump, I jump" and the related
+						subtilte, synopses and script. The highlighted color is the corresponding
+						text content of the clip.
+					</div>
+					<br />
+
+					<div align="center">
+						<video class="lg-media" controls>
+							<source src="src/imgs/examples/jump_010203.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<br />
+
+					<nav>
+						<div class="nav nav-tabs" id="nav-tab" role="tablist">
+							<a class="nav-item nav-link active" id="nav-subtitle-tab" data-toggle="tab"
+								href="#nav-subtitle" role="tab" aria-controls="nav-subtitle"
+								aria-selected="true">subtitle</a>
+							<a class="nav-item nav-link" id="nav-synopsis-tab" data-toggle="tab" href="#nav-synopsis"
+								role="tab" aria-controls="nav-synopsis" aria-selected="false">synopsis</a>
+							<a class="nav-item nav-link" id="nav-script-tab" data-toggle="tab" href="#nav-script"
+								role="tab" aria-controls="nav-script" aria-selected="false">script</a>
+						</div>
+					</nav>
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="nav-subtitle" role="tabpanel"
+							aria-labelledby="nav-subtitle-tab">
+							<div class="row abs-mg-top text-board-limit">
+								<div class="col-md-6 col-12">
+									<pre class="pretty"><code class="nohighlight">
+	380
+	00:34:05,282 --> 00:34:06,601
+	I'm Tommy Ryan.
+
+	381
+	00:34:06,682 --> 00:34:08,081
+	- Jack Dawson.
+	- Hello.
+
+	382
+	00:34:08,162 --> 00:34:09,641
+	- Fabrizio.
+	- Hi.
+
+	383
+	00:34:10,562 --> 00:34:13,076
+	Do you make any money
+	with your drawings?
+
+	...
+
+	<span class="color-highlight">	395
+	00:37:02,877 --> 00:37:04,196
+	Don't do it.
+
+	396
+	00:37:04,677 --> 00:37:05,951
+	Stay back.
+
+	397
+	00:37:06,917 --> 00:37:08,669
+	Don't come any closer.
+
+	398
+	00:37:09,517 --> 00:37:12,030
+	Come on. Just give me your hand,
+	I'll pull you back over.
+
+	399
+	00:37:12,117 --> 00:37:13,947
+	No! Stay where you are.
+
+	400
+	00:37:14,476 --> 00:37:15,796
+	I mean it.
+
+	401
+	00:37:16,356 --> 00:37:17,675
+	I'll let go.
+
+	402
+	00:37:28,476 --> 00:37:29,909
+	No, you won't.
+
+	...
+
+	411
+	00:37:55,035 --> 00:37:56,866
+	The fall alone will kill you.
+
+	412
+	00:37:56,955 --> 00:37:59,594
+	It would hurt.
+	I'm not saying it wouldn't.
+
+	413
+	00:38:00,195 --> 00:38:02,186
+	To tell you the truth,
+	I'm a lot more concerned ...
+
+	414
+	00:38:02,275 --> 00:38:04,345
+	about that water being so cold.
+
+	...</span></code></pre>
+								</div>
+								<div class="col-md-6 col-12">
+									<pre class="pretty"><code class="nohighlight">
+<span class="color-highlight">	452
+	00:40:30,030 --> 00:40:31,429
+	Help, please!
+
+	453
+	00:40:34,270 --> 00:40:37,307
+	- Please, help me!
+	- Listen to me. I've got you.
+
+	454
+	00:40:37,590 --> 00:40:39,069
+	I won't let go.
+
+	455
+	00:40:39,150 --> 00:40:41,266
+	Now pull yourself up. Come on!
+
+	456
+	00:40:43,990 --> 00:40:45,787
+	Come on. That's right.
+
+	457
+	00:40:46,430 --> 00:40:47,863
+	You can do it.
+
+	458
+	00:40:52,190 --> 00:40:53,509
+	I got you.
+</span>
+	459
+	00:40:58,909 --> 00:41:00,467
+	What's all this?
+
+	460
+	00:41:05,869 --> 00:41:08,463
+	You stand back!
+	And don't move an inch!
+
+	461
+	00:41:10,789 --> 00:41:12,268
+	Fetch the master-at-arms.
+
+	462
+	00:41:14,269 --> 00:41:16,499
+	This is completely unacceptable.
+
+	463
+	00:41:16,789 --> 00:41:20,304
+	What made you think you could
+	put your hands on my fiancée?
+
+	464
+	00:41:20,669 --> 00:41:22,261
+	Look at me, you filth!
+
+	465
+	00:41:22,349 --> 00:41:24,385
+	- Cal.
+	- What do you think you were doing?
+
+	466
+	00:41:24,469 --> 00:41:26,584
+	Cal, stop. It was an accident.
+
+	467
+	00:41:27,708 --> 00:41:29,061
+	An accident?
+
+	468
+	00:41:29,708 --> 00:41:30,858
+	It was.
+
+	469
+	00:41:32,028 --> 00:41:33,427
+	Stupid, really.</code></pre>
+								</div>
+
+							</div>
+
+
+						</div>
+						<div class="tab-pane fade" id="nav-synopsis" role="tabpanel" aria-labelledby="nav-synopsis-tab">
+							<div
+								class="pretty abs-mg-top color-light text-board-limit text-board-pad justify-text-between ">
+								In 1996, treasure hunter Brock Lovett (Bill Paxton) and his team aboard the research
+								vessel Keldysh search the wreck of RMS Titanic for a necklace with a rare diamond,
+								the
+								Heart of the Ocean. They recover a safe containing a drawing of a young woman
+								wearing
+								only the necklace. It is dated April 14, 1912, the day the ship struck the iceberg.
+								Rose
+								Dawson Calvert (Gloria Stuart), claiming to be the person in the drawing, visits
+								Lovett
+								and tells of her experiences aboard the ship.
+								<br /><br />
+								In 1912 Southampton, 17-year-old
+								first-class passenger Rose DeWitt Bukater (Kate Winslet), her fiancé Cal Hockley
+								(Billy
+								Zane), and her mother Ruth (Frances Fisher) board the Titanic. Also boarding the
+								ship at
+								Southampton are Jack Dawson (Leonardo DiCaprio), a down-on-his-luck sketch artist,
+								and
+								his Italian friend Fabrizio (Danny Nucci). <span class="color-highlight">Young Rose,
+									angry and distraught that her
+									mother has apparently arranged the marriage, considers committing suicide by
+									jumping
+									from the stern; Jack manages to pull her back over the rail after she loses her
+									footing
+									& nearly falls into the propellers.</span> Discovered with Jack, Rose tells Cal
+								that
+								she was
+								peering over the edge and Jack saved her from falling. Cal is indifferent, but when
+								Rose
+								indicates some recognition is due, he offers Jack a small amount of money.
+								<br /><br />
+								After Rose
+								asks whether saving her life meant so little, he invites Jack to dine with them in
+								first
+								class the following night, along with several prominent first-class passengers -
+								including the Countess of Rothes, Archibald Gracie (Bernard Fox), Thomas Andrews
+								(Victor
+								Garber), Molly Brown (Kathy Bates), and John Jacob Astor (Eric Braeden) & his wife.
+								Jack
+								and Rose develop a tentative friendship, though Cal and Ruth are wary of him.
+								<br /><br />
+								Following
+								dinner, Rose secretly joins Jack at a party in third class. During the party Cal's
+								butler, Spicer Lovejoy (David Warner) stealthily sneaks down the third class
+								staircase
+								to spy on her. After a very tense breakfast the following morning, in which Cal
+								shows an
+								inclination towards violence, Rose becomes even more apprehensive about her upcoming
+								marriage. Ruth emphasizes that Rose's marriage will resolve the DeWitt Bukaters'
+								financial problems. After spotting Rose, Cal and Ruth out on the Boat Deck, Jack
+								stealthily sneaks back into First Class and tries to warn Rose about what she may be
+								facing. Rose rebuffs Jack's advances, but later realizes that she prefers him over
+								Cal.
+								<br /><br />
+								After meeting on the bow at sunset, Rose takes Jack to her state room and displays
+								Cal's
+								engagement present: the Heart of the Ocean. At her request, Jack sketches Rose
+								posing
+								nude wearing it. Meanwhile, in the First-Class Smoking Room, Cal's butler informs
+								him
+								that none of the stewards have seen Rose at all that night. Cal orders the butler to
+								find her. Rose & Jack manage to evade Cal's bodyguard and have sex in an automobile
+								inside the cargo hold. They later visit the forward well deck, and while on it, the
+								lookouts spot an iceberg directly in the ship's path.
+								<br /><br />
+								Orders are given to turn the ship
+								hard a-starboard and run the engines full astern, but the ship takes too long to
+								make
+								the turn and the starboard side scrapes along the iceberg, causing substantial
+								damage to
+								the watertight compartments, including the cargo hold where Jack & Rose had been
+								having
+								sex in the automobile. Jack & Rose witness the collision with the iceberg and
+								overhear
+								the officers and designer discussing its seriousness.
+								<br /><br />
+								On the bridge, builder Thomas
+								Andrews, Captain Smith (Bernard Hill), the ship's officers and White Star Line
+								Managing
+								Director Bruce Ismay (Jonathan Hyde) discuss the damage. The water has reached 14
+								feet
+								above the keel in 10 minutes and has flooded 5 watertight compartments. Mr. Andrews
+								warns that because of a design flaw, the water will spill over the tops of the
+								bulkheads
+								at E Deck, and this will cause the ship to sink. He gives an hour, two at most, for
+								the
+								ship to remain afloat.
+								<br /><br />
+								Cal discovers Jack's sketch of Rose and a mocking note from her
+								in his safe along with the necklace. When Jack and Rose attempt to tell Cal of the
+								collision, he has his butler slip the necklace into Jack's pocket and accuses him of
+								theft. He is arrested, taken to the Master-at-arms' office, and handcuffed to a
+								pipe.
+								<br /><br />
+								Cal puts the necklace in his own coat pocket. With the ship sinking, Rose is
+								desperate
+								to free Jack. She flees Cal and her mother, who has boarded a lifeboat, and rescues
+								him.
+								They return to the boat deck, where Cal and Jack encourage her to board a lifeboat;
+								Cal
+								claims he can get himself and Jack off safely. After Rose boards one, Cal tells Jack
+								the
+								arrangement is only for himself.
+								<br /><br />
+								As her boat lowers, Rose decides that she cannot leave
+								Jack and jumps back on board. Jack confronts her, angrily at first, but his angers
+								soon
+								turns to affection and they share a series of kisses at the bottom of the Grand
+								Staircase. Cal, seeing this, takes his butler's pistol and chases Rose and Jack into
+								the
+								flooding first class dining saloon. After using up his ammunition, Cal realizes he
+								gave
+								his coat and consequently the necklace to Rose.
+								<br /><br />
+								Jack & Rose are forced to flee below
+								decks to escape Cal, and narrowly escape drowning themselves. They become trapped
+								behind
+								a locked gate, but Jack manages to free them just as the rising water reaches their
+								heads. Out on the Boat Deck, Cal decides to make his own escape. He reminds the
+								First
+								Officer of the arrangement made earlier, but the officer angrily turns on Cal and
+								refuses to allow him boarding. When he spots a lost child hiding behind a winch, he
+								takes the child and is subsequently allowed into a collapsible lifeboat by Chief
+								Officer
+								Wilde.
+								<br /><br />
+								As Cal and others board the collapsible, the water surges into the bridge &
+								wheelhouse, drowning Captain E.J. Smith and causing Cal's boat to start floating off
+								the
+								deck. By now the stern is staring to rise out of the water and the remaining
+								passengers
+								are running farther & farther aft. After braving several obstacles, Jack and Rose
+								return
+								to the boat deck.
+								<br /><br />
+								All the lifeboats have departed and passengers are falling to their
+								deaths as the stern rises out of the water. Water now crashes through the huge dome
+								over
+								the Grand Staircase, drowning those passengers trapped inside. Jack & Rose reach the
+								very stern - where they had first met - and take up positions on it by climbing over
+								the
+								rail, next to Chief Baker Charles Joughin.
+								<br /><br />
+								The ship breaks in half, causing the stern to
+								crash down into the water and killing Lovejoy, the butler. As the bow breaks off it
+								pulls the stern back into the air, leaving it sitting there for a minute. Jack and
+								Rose
+								ride it into the ocean as it fills with water and then plunges to the bottom.
+								<br /><br />
+								As Jack &
+								Rose let go of the stern, the Titanic disappears into the darkness below them, and
+								they
+								both swim to the surface to find themselves in a massive mob of passengers and crew.
+								Within minutes, Rose & Jack find a piece of paneling from the Grand Staircase, and
+								he
+								helps her onto the wooden panel only buoyant enough for one person. Holding the
+								edge, he
+								assures her that she will die an old woman, warm in her bed. He dies of hypothermia
+								but
+								she is saved when Fifth Officer Lowe & some crewmen return to try to find survivors.
+								<br /><br />
+								With Rose hiding from Cal en route, the RMS Carpathia takes the survivors to New
+								York.
+								There she gives her name as Rose Dawson. She later learns that Cal committed suicide
+								after losing everything in the 1929 Wall Street Crash.
+								<br /><br />
+								Lovett abandons his search after
+								hearing Rose's story. Alone on the stern of the Keldysh, Rose takes out the Heart of
+								the
+								Ocean - in her possession all along - and drops it into the sea over the wreck site.
+								While she is seemingly asleep in her bed, photos on her dresser depict a life of
+								freedom
+								and adventure, partly inspired by Jack. A young Rose returns to the ship - at first,
+								a
+								gloomy wreck on the bottom - but as Rose reaches the Promenade Deck the ship begins
+								to
+								glow with light. As she enters the Grand Staircase she is greeted by those who
+								perished
+								on the ship - including the Titanic's band, First Officer Murdoch, Thomas Andrews,
+								Jack's friends Fabrizio & Tommy Ryan, and standing at the clock is Jack himself. He
+								extends a hand and they reunite, to the happy cheers of the perished passengers &
+								crew.
+							</div>
+						</div>
+						<div class="tab-pane fade" id="nav-script" role="tabpanel" aria-labelledby="nav-script-tab">
+							<div class="abs-mg-top text-board-limit">
+								<pre class="pretty"><code class="nohighlight">	...
+
+	63 INT. ROSE'S BEDROOM - NIGHT
+
+	She enters the room. Stands in the middle, staring at her reflection in the
+	large vanity mirror. Just stands there, then--
+	
+	With a primal, anguished cry she claws at her throat, ripping off her pearl
+	necklace, which explodes across the room. In a frenzy she tears at herself,
+	her clothes, her hair... then attacks the room. She flings everything off
+	the dresser and it flies clattering against the wall. She hurls a
+	handmirror against the vanity, cracking it.
+	
+										CUT TO:
+	
+	<span class="color-highlight">64 EXT. A DECK PROMENADE, AFT - NIGHT
+	
+	Rose runs along the B deck promenade. She is dishevelled, her hair flying.
+	She is crying, her cheeks streaked with tears. But also angry, furious!
+	Shaking with emotions she doesn't understand... hatred, self-hatred,
+	desperation. A strolling couple watch her pass. Shocked at the emotional
+	display in public.
+	
+										CUT TO:
+	
+	65 EXT. POOP DECK - NIGHT
+	
+	Jack is kicked back on one of the benches gazing at the stars blazing
+	gloriously overhead. Thinking artist thoughts and smoking a cigarette.
+	
+	Hearing something, he turns as Rose runs up the stairs from the well deck.
+	They are the only two on the stern deck, except for QUARTERMASTER ROWE,
+	twenty feet above them on the docking bridge catwalk. She doesn't see Jack
+	in the shadows, and runs right past him.
+	
+	TRACKING WITH ROSE as she runs across the deserted fantail. Her breath
+	hitches in an occasional sob, which she suppresses. Rose slams against the
+	base of the stern flagpole and clings there, panting. She stares out at the
+	black water.
+	
+	Then starts to climb over the railing. She has to hitch her long dress way
+	up, and climbing is clumsy. Moving methodically she turns her body and gets
+	her heels on the white-painted gunwale, her back to the railing, facing out
+	toward blackness. 60 feet below her, the massive propellers are churning
+	the atlantin into white foam, and a ghostly wake trails off toward the
+	horizon.
+	
+	IN A LOW ANGLE, we see Rose standing like a figurehead in reverse. Below
+	her are the huge letters of the name "TITANIC".
+	
+	She leans out, her arms straightening... looking down hypnotized, into the
+	vortex below her. Her dress and hair are lifted by the wind of the ship's
+	movement. The only sound, above the rush of water below, is the flutter and
+	snap of the big Union Jack right above her.
+	
+						JACK
+	
+	Don't do it.
+	
+	She whips her head around at the sound of his voice. It takes a second for
+	her eyes to focus.
+	
+						ROSE
+	
+	Stay back! Don't come any closer!
+	
+	Jack sees the tear tracks on her cheeks in the faint glow from the stern
+	running lights.
+	
+						JACK
+	
+	Take my hand. I'll pull you back in.
+	
+						ROSE
+	
+	No! Stay where you are. I mean it. I'll let go.
+	
+						JACK
+	
+	No you won't.
+	
+						ROSE
+	
+	What do you mean no I won't? Don't presume to tell me what I will and will
+	not do. You don't know me.
+	
+						JACK
+	
+	You would have done it already. Now come on, take my hand.
+	
+	Rose is confused now. She can't see him very well through the tears, so she
+	wipes them with one hand, almost losing her balance.
+	
+						ROSE
+	
+	You're distracting me. Go away.
+	
+						JACK
+	
+	I can't. I'm involved now. If you let go I have to jump in after you.
+	
+						ROSE
+	
+	Don't be absurd. You'll be killed.
+	
+	He takes off his jacket.
+	
+						JACK
+	
+	I'm a good swimmer.
+	
+	He starts unlacing his left shoe.
+	
+						ROSE
+	
+	The fall alone would kill you.
+	
+						JACK
+	
+	It would hurt. I'm not saying it wouldn't. To be honest I'm a lot more
+	concerned about the water being so cold.
+	
+	She looks down. The reality factor of what she is doing is sinking in.
+	
+						ROSE
+	
+	How cold?
+	
+						JACK
+	
+				(taking off his left shoe)
+	
+	Freezing. Maybe a couple degrees over.
+	
+	He starts unlacing his right shoe.
+	
+						JACK
+	
+	Ever been to Wisconsin?
+	
+						ROSE
+	
+					(perplexed)
+	
+	No.
+	
+						JACK
+	
+	Well they have some of the coldest winters around, and I grew up there,
+	near Chippewa Falls. Once when I was a kid me and my father were
+	ice-fishing out on Lake Wissota... ice-fishing's where you chop a hole in
+	the--
+	
+						ROSE
+	
+	I know what ice fishing is!
+	
+						JACK
+	
+	Sorry. Just... you look like kind of an indoor girl. Anyway, I went through
+	some thin ice and I'm tellin' ya, water that cold... like that right down
+	there... it hits you like a thousand knives all over your body. You can't
+	breath, you can't think... least not about anything but the pain.
+	
+				(takes off his other shoe)
+	
+	Which is why I'm not looking forward to jumping in after you. But like I
+	said, I don't see a choice. I guess I'm kinda hoping you'll come back over
+	the rail and get me off the hook here.
+	
+						ROSE
+	
+	You're crazy.
+	
+						JACK
+	
+	That's what everybody says. But with all due respect, I'm not the one
+	hanging off the back of a ship.
+	
+	He slides one step closer, like moving up on a spooked horse.
+	
+						JACK
+	
+	Come on. You don't want to do this. Give me your hand.
+	
+	Rose stares at this madman for a long time. She looks at his eyes and they
+	somehow suddenly seem to fill her universe.
+	
+						ROSE
+	
+	Alright.
+	
+	She unfastens one hand from the rail and reaches it around toward him. He
+	reaches out to take it, firmly.
+	
+						JACK
+	
+	I'm Jack Dawson.
+	
+						ROSE
+	
+						(voice quavering)
+	
+	Pleased to meet you, Mr. Dawson.
+	
+	Rose starts to turn. Now that she has decided to live, the height is
+	terrifying. She is overcome by vertigo as she shifts her footing, turning
+	to face the ship. As she starts to climb, her dress gets in the way, and
+	one foot slips off the edge of the deck.
+	
+	She plunges, letting out a piercing SHRIEK. Jack, gripping her hand, is
+	jerked toward the rail. Rose barely grabs a lower rail with her free hand.
+	
+	QUARTERMASTER ROWE, up on the docking bridge hears the scream and heads for
+	the ladder.
+	
+						ROSE
+	
+	HELP! HELP!!
+	
+						JACK
+	
+	I've got you. I won't let go.
+	
+	Jack holds her hand with all his strength, bracing himself on the railing
+	with his other hand. Rose tries to get some kind of foothold on the smooth
+	hull. Jack tries to lift her bodily over the railing. She can't get any
+	footing in her dress and evening shoes, and she slips back. Rose SCREAMS
+	again.
+	
+	Jack, awkwardly clutching Rose by whatever he can get a grip on as she
+	flails, gets her over the railing. They fall together onto the deck in a
+	tangled heap, spinning in such a way that Jack winds up slightly on top of
+	her.
+	
+	Rowe slides down the ladder from the docking bridge like it's a fire drill
+	and sprints across the fantail.</span>
+	
+						ROWE
+	
+	Here, what's all this?!
+	
+	Rowe runs up and pulls Jack off of Rose, revealing her dishevelled and
+	sobbing on the deck. Her dress is torn, and the hem is pushing up above her
+	knees, showing one ripped stocking. He looks at Jack, the shaggy steerage
+	man with his jacket off, and the first class lady clearly in distress, and
+	starts drawing conclusions. Two seamen chug across the deck to join them.
+	
+						ROWE
+	
+						(to Jack)
+	
+	Here you, stand back! Don't move an inch!
+	
+						(to the seamen)
+	
+	Fetch the Master at Arms.
+	
+										CUT TO:
+	
+	66 EXT. POOP DECK - NIGHT
+	
+	A few minutes later. Jack is being detained by the burly MASTER AT ARMS,
+	the closest thing to a cop on board. He is handcuffing Jack. Cal is right
+	in front of Jack, and furious. He has obviously just rushed out here with
+	Lovejoy and another man, and none of them have coats over their black tie
+	evening dress. The other man is COLONEL ARCHIBALD GRACIE, a mustachioed
+	blowhard who still has his brandy snifter. He offers it to Rose, who is
+	hunched over crying on a bench nearby, but she waves it away. Cal is more
+	concerned with Jack. He grabs him by the lapels.
+	
+						CAL
+	
+	What made you think you could put your hands on my fiancee?! Look at me,
+	you filth! What did you think you were doing?!
+	
+						ROSE
+	
+	Cal, stop! It was an accident.
+	
+						CAL
+	
+	An accident?!
+	
+						ROSE
+	
+	It was... stupid really. I was leaning over and I slipped.
+	
+	Rose looks at Jack, getting eye contact.
+	
+						ROSE
+	
+	I was leaning way over, to see the... ah... propellers. And I slipped and I
+	would have gone overboard... and Mr. Dawson here saved me and he almost
+	went over himself.
+	
+						CAL
+	
+	You wanted to see the propellers?
+									
+
+	...</code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal Data Meta-->
+	<div class="modal fade " id="modal-data-meta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-width-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="md-font bold" id="exampleModalLabel">Examples of meta data in MovieNet</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body ">
+					<div class="bold">
+						Example Meta Data
+					</div>
+					<div class="color-light">
+						Here we show meta data of movie <i>Titanic</i>.
+					</div>
+					<div class="abs-mg-top text-board-limit">
+						<pre class="pretty"><code class="language-json" data-lang="json">{
+	"imdb_id": "tt0120338",
+	"tmdb_id": "597",
+	"douban_id": "1292722",
+	"title": "Titanic (1997)",
+	"genres": [
+		"Drama",
+		"Romance"
+	],
+	"country": "USA",
+	"version": [
+		{
+		"runtime": "194 min",
+		"description": ""
+		}
+	],
+	"imdb_rating": 7.7,
+	"director": [
+		{
+		"id": "nm0000116",
+		"name": "James Cameron"
+		}
+	],
+	"writer": [
+		{
+		"id": "nm0000116",
+		"name": "James Cameron",
+		"description": "written by"
+		}
+	],
+	"cast": [
+		{
+		"id": "nm0000138",
+		"name": "Leonardo DiCaprio",
+		"character": "Jack Dawson"
+		},
+		{
+		"id": "nm0000701",
+		"name": "Kate Winslet",
+		"character": "Rose Dewitt Bukater"
+		},
+		{
+		"id": "nm0000708",
+		"name": "Billy Zane",
+		"character": "Cal Hockley"
+		},
+		{
+		"id": "nm0000870",
+		"name": "Kathy Bates",
+		"character": "Molly Brown"
+		},
+		{
+		"id": "nm0004920",
+		"name": "Frances Fisher",
+		"character": "Ruth Dewitt Bukater"
+		},
+		{
+		"id": "nm0001784",
+		"name": "Gloria Stuart",
+		"character": "Old Rose"
+		},
+		{
+		"id": "nm0000200",
+		"name": "Bill Paxton",
+		"character": "Brock Lovett"
+		},
+		{
+		"id": "nm0384060",
+		"name": "Bernard Hill",
+		"character": "Captain Smith"
+		},
+		{
+		"id": "nm0001831",
+		"name": "David Warner",
+		"character": "Spicer Lovejoy"
+		},
+		{
+		"id": "nm0001255",
+		"name": "Victor Garber",
+		"character": "Thomas Andrews"
+		},
+		{
+		"id": "nm0404993",
+		"name": "Jonathan Hyde",
+		"character": "Bruce Ismay"
+		},
+		{
+		"id": "nm0000751",
+		"name": "Suzy Amis",
+		"character": "Lizzy Calvert"
+		},
+		{
+		"id": "nm0008656",
+		"name": "Lewis Abernathy",
+		"character": "Lewis Bodine"
+		},
+		{
+		"id": "nm0143167",
+		"name": "Nicholas Cascone",
+		"character": "Bobby Buell"
+		},
+		{
+		"id": "nm0755972",
+		"name": "Anatoly M. Sagalevitch",
+		"character": "Anatoly Milkailavich"
+		},
+		{
+		"id": "nm0001572",
+		"name": "Danny Nucci",
+		"character": "Fabrizio"
+		},
+		{
+		"id": "nm0058029",
+		"name": "Jason Barry",
+		"character": "Tommy Ryan"
+		},
+		{
+		"id": "nm0829380",
+		"name": "Ewan Stewart",
+		"character": "1st Officer Murdoch"
+		},
+		{
+		"id": "nm0344435",
+		"name": "Ioan Gruffudd",
+		"character": "Fifth Officer Lowe"
+		},
+		{
+		"id": "nm0680526",
+		"name": "Jonny Phillips",
+		"character": "2nd Officer Lightoller"
+		},
+		{
+		"id": "nm0152464",
+		"name": "Mark Lindsay Chapman",
+		"character": "Chief Officer Wilde"
+		},
+		{
+		"id": "nm0334262",
+		"name": "Richard Graham",
+		"character": "Quartermaster Rowe"
+		},
+		{
+		"id": "nm0109229",
+		"name": "Paul Brightwell",
+		"character": "Quartermaster Hichens"
+		},
+		{
+		"id": "nm0231871",
+		"name": "Ron Donachie",
+		"character": "Master at Arms"
+		},
+		{
+		"id": "nm0000967",
+		"name": "Eric Braeden",
+		"character": "John Jacob Astor"
+		},
+		{
+		"id": "nm0154195",
+		"name": "Charlotte Chatton",
+		"character": "Madeleine Astor"
+		},
+		{
+		"id": "nm0288882",
+		"name": "Bernard Fox",
+		"character": "Col. Archibald Gracie"
+		},
+		{
+		"id": "nm0258117",
+		"name": "Michael Ensign",
+		"character": "Benjamin Guggenheim"
+		},
+		{
+		"id": "nm0107938",
+		"name": "Fannie Brett",
+		"character": "Madame Aubert"
+		},
+		{
+		"id": "nm0001280",
+		"name": "Jenette Goldstein",
+		"character": "Irish Mommy"
+		},
+		{
+		"id": "nm0653829",
+		"name": "Camilla Overbye Roos",
+		"character": "Helga Dahl"
+		},
+		{
+		"id": "nm0449599",
+		"name": "Linda Kerns",
+		"character": "3rd Class Woman"
+		},
+		{
+		"id": "nm0301401",
+		"name": "Amy Gaipa",
+		"character": "Trudy Bolt"
+		},
+		{
+		"id": "nm0419089",
+		"name": "Martin Jarvis",
+		"character": "Sir Duff Gordon"
+		},
+		{
+		"id": "nm0044011",
+		"name": "Rosalind Ayres",
+		"character": "Lady Duff Gordon"
+		},
+		{
+		"id": "nm0741645",
+		"name": "Rochelle Rose",
+		"character": "Countess of Rothes"
+		},
+		{
+		"id": "nm0263323",
+		"name": "Jonathan Evans-Jones",
+		"character": "Wallace Hartley"
+		},
+		{
+		"id": "nm0909574",
+		"name": "Brian Walsh",
+		"character": "Irish Man"
+		},
+		{
+		"id": "nm0853092",
+		"name": "Rocky Taylor",
+		"character": "Bert Cartmell"
+		},
+		{
+		"id": "nm0654302",
+		"name": "Alexandrea Owens",
+		"character": "Cora Cartmell"
+		},
+		{
+		"id": "nm0186426",
+		"name": "Simon Crane",
+		"character": "4th Officer Boxhall"
+		},
+		{
+		"id": "nm0281992",
+		"name": "Edward Fletcher",
+		"character": "6th Officer Moody"
+		},
+		{
+		"id": "nm0027424",
+		"name": "Scott Anderson",
+		"character": "Frederick Fleet"
+		},
+		{
+		"id": "nm0247542",
+		"name": "Martin East",
+		"character": "Lookout Lee"
+		},
+		{
+		"id": "nm0446287",
+		"name": "Craig Kelly",
+		"character": "Harold Bride"
+		},
+		{
+		"id": "nm0177427",
+		"name": "Gregory Cooke",
+		"character": "Jack Phillips"
+		},
+		{
+		"id": "nm0876720",
+		"name": "Liam Tuohy",
+		"character": "Chief Baker Joughin"
+		},
+		{
+		"id": "nm0484140",
+		"name": "James Lancaster",
+		"character": "Father Byles"
+		},
+		{
+		"id": "nm0712341",
+		"name": "Elsa Raven",
+		"character": "Ida Straus"
+		},
+		{
+		"id": "nm0658817",
+		"name": "Lew Palter",
+		"character": "Isidor Straus"
+		},
+		{
+		"id": "nm0859809",
+		"name": "Reece P. Thompson III",
+		"character": "Irish Little Boy"
+		},
+		{
+		"id": "nm0484837",
+		"name": "Laramie Landis",
+		"character": "Irish Little Grl"
+		},
+		{
+		"id": "nm0905290",
+		"name": "Amber Waddell",
+		"character": "Cal's Crying Girl"
+		},
+		{
+		"id": "nm0905289",
+		"name": "Alison Waddell",
+		"character": "Cal's Crying Girl"
+		},
+		{
+		"id": "nm0874171",
+		"name": "Mark Rafael Truitt",
+		"character": "Yaley"
+		},
+		{
+		"id": "nm0906975",
+		"name": "John Walcutt",
+		"character": "1st Class Husband"
+		},
+		{
+		"id": "nm0286157",
+		"name": "Terry Forrestal",
+		"character": "Chief Engineer Bell"
+		},
+		{
+		"id": "nm0494749",
+		"name": "Derek Lea",
+		"character": "Leading Stoker Barrett"
+		},
+		{
+		"id": "nm0039263",
+		"name": "Richard Ashton",
+		"character": "Carpenter John Hutchinson"
+		},
+		{
+		"id": "nm0626119",
+		"name": "Sean Nepita",
+		"character": "Elevator Operator       (as Sean M. Nepita)"
+		},
+		{
+		"id": "nm0175267",
+		"name": "Brendan Connolly",
+		"character": "Scotland Road Steward"
+		},
+		{
+		"id": "nm0188836",
+		"name": "David Cronnelly",
+		"character": "Crewman"
+		},
+		{
+		"id": "nm0934350",
+		"name": "Garth Wilton",
+		"character": "1st Class Waiter"
+		},
+		{
+		"id": "nm0481918",
+		"name": "Martin Laing",
+		"character": "Promenade Deck Steward"
+		},
+		{
+		"id": "nm0289211",
+		"name": "Richard Fox",
+		"character": "Steward #1"
+		},
+		{
+		"id": "nm0575164",
+		"name": "Nick Meaney",
+		"character": "Steward #2"
+		},
+		{
+		"id": "nm0654503",
+		"name": "Kevin Owers",
+		"character": "Steward #3"
+		},
+		{
+		"id": "nm0135633",
+		"name": "Mark Capri",
+		"character": "Steward #4"
+		},
+		{
+		"id": "nm0006976",
+		"name": "Marc Cass",
+		"character": "Hold Steward #1"
+		},
+		{
+		"id": "nm0378609",
+		"name": "Paul Herbert",
+		"character": "Hold Steward #2"
+		},
+		{
+		"id": "nm0416474",
+		"name": "Emmett James",
+		"character": "1st Class Steward"
+		},
+		{
+		"id": "nm0126137",
+		"name": "Chris Byrne",
+		"character": "Stairwell Steward       (as Christopher Byrne)"
+		},
+		{
+		"id": "nm0656297",
+		"name": "Oliver Page",
+		"character": "Steward Barnes"
+		},
+		{
+		"id": "nm0308127",
+		"name": "James Garrett",
+		"character": "Titanic Porter"
+		},
+		{
+		"id": "nm0390683",
+		"name": "Erik Holland",
+		"character": "Olaf Dahl"
+		},
+		{
+		"id": "nm0455801",
+		"name": "Jari Kinnunen",
+		"character": "Bjorn Gunderson"
+		},
+		{
+		"id": "nm0266119",
+		"name": "Anders Falk",
+		"character": "Olaus Gunderson"
+		},
+		{
+		"id": "nm0399103",
+		"name": "Martin Hub",
+		"character": "Slovakian Father"
+		},
+		{
+		"id": "nm0012079",
+		"name": "Seth Adkins",
+		"character": "Slovakian 3 Year Old Boy"
+		},
+		{
+		"id": "nm0219336",
+		"name": "Barry Dennen",
+		"character": "Praying Man"
+		},
+		{
+		"id": "nm0881951",
+		"name": "Vern Urich",
+		"character": "Man in Water"
+		},
+		{
+		"id": "nm0459779",
+		"name": "Rebecca Klingler",
+		"character": "Mother at Stern       (as Rebecca Jane Klingler)"
+		},
+		{
+		"id": "nm0642078",
+		"name": "Tricia O'Neil",
+		"character": "Woman"
+		},
+		{
+		"id": "nm0242649",
+		"name": "Kathleen S. Dunn",
+		"character": "Woman in Water       (as Kathleen Dunn)"
+		},
+		{
+		"id": "nm0290302",
+		"name": "Romeo Francis",
+		"character": "Syrian Man"
+		},
+		{
+		"id": "nm0547808",
+		"name": "Mandana Marino",
+		"character": "Syrian Woman"
+		},
+		{
+		"id": "nm0512746",
+		"name": "Van Ling",
+		"character": "Chinese Man"
+		},
+		{
+		"id": "nm0647600",
+		"name": "Bj\u00f8rn Olsen",
+		"character": "Olaf       (as Bj\u00f8rn)"
+		},
+		{
+		"id": "nm0678562",
+		"name": "Dan Pettersson",
+		"character": "Sven"
+		},
+		{
+		"id": "nm0240474",
+		"name": "Shay Duffin",
+		"character": "Pubkeeper"
+		},
+		{
+		"id": "nm0254862",
+		"name": "Greg Ellis",
+		"character": "Carpathia Steward"
+		},
+		{
+		"id": "nm0604611",
+		"name": "Diana Morgan",
+		"character": "News Reporter"
+		},
+		{
+		"id": "nm9200859",
+		"name": "Salonisti",
+		"character": "Titanic Orchestra       (as I Salonisti)"
+		},
+		{
+		"id": "nm9200860",
+		"name": "Gaelic Storm",
+		"character": "Steerage Band"
+		},
+		{
+		"id": "nm0027735",
+		"name": "Kris Andersson",
+		"character": "Dancer"
+		},
+		{
+		"id": "nm0060858",
+		"name": "Bobbie Bates",
+		"character": "Dancer"
+		},
+		{
+		"id": "nm0143568",
+		"name": "Aaron James Cash",
+		"character": "Dancer"
+		},
+		{
+		"id": "nm0281945",
+		"name": "Anne Fletcher",
+		"character": "Dancer"
+		},
+		{
+		"id": "nm0287038",
+		"name": "Edmond Alan Forsyth",
+		"character": "Dancer       (as Ed Forsyth)"
+		},
+		{
+		"id": "nm0382794",
+		"name": "Andie Hicks",
+		"character": "Dancer"
+		},
+		{
+		"id": "nm0386816",
+		"name": "Scott Hislop",
+		"character": "Dancer"
+		},
+		{
+		"id": "nm0563306",
+		"name": "Stan Mazin",
+		"character": "Dancer"
+		},
+		{
+		"id": "nm0711938",
+		"name": "Lisa Ratzin",
+		"character": "Dancer"
+		},
+		{
+		"id": "nm0719444",
+		"name": "Julene Renee",
+		"character": "Dancer"
+		},
+		{
+		"id": "nm0368229",
+		"name": "Lorenz Hasler",
+		"character": "I Salonisti Violin"
+		},
+		{
+		"id": "nm0299809",
+		"name": "Thomas F\u00fcri",
+		"character": "I Salonisti Violin"
+		},
+		{
+		"id": "nm0843876",
+		"name": "Ferenc Szedl\u00e1k",
+		"character": "I Salonisti Cello"
+		},
+		{
+		"id": "nm0843875",
+		"name": "B\u00e9la Szedl\u00e1k",
+		"character": "I Salonisti Double Bass"
+		},
+		{
+		"id": "nm0317594",
+		"name": "Werner Giger",
+		"character": "I Salonisti Piano"
+		},
+		{
+		"id": "nm0125320",
+		"name": "Mike Butters",
+		"character": "Musician"
+		},
+		{
+		"id": "nm0000116",
+		"name": "James Cameron",
+		"character": "Steerage Dancer"
+		}
+	],
+	"overview": "84 years later, a 101-year-old woman named Rose DeWitt Bukater 
+tells the story to her granddaughter Lizzy Calvert, Brock Lovett, ... And she 
+explains the whole story from departure until the death of Titanic on its first 
+and last voyage April 15th, 1912 at 2:20 in the morning.",
+	"storyline": "84 years later, a 100 year-old woman named Rose DeWitt Bukater
+tells the story to her granddaughter Lizzy Calvert, Brock Lovett, ... And she 
+explains the whole story from departure until the death of Titanic on its first 
+and last voyage April 15th, 1912 at 2:20 in the morning.",
+	"plot": "In 1996, treasure hunter Brock Lovett and his team aboard the 
+research vessel Akademik Mstislav Keldysh search the wreck of RMS Titanic for a 
+necklace with a rare diamond, the Heart of the Ocean. ... A young Rose reunites 
+with Jack at the Titanic's Grand Staircase, applauded by those who died.",
+	"synopsis": "In 1996, treasure hunter Brock Lovett (Bill Paxton) and his 
+team aboard the research vessel Keldysh search the wreck of RMS Titanic for a 
+necklace with a rare diamond, the Heart of the Ocean. ...e extends a hand and 
+they reunite, to the happy cheers of the perished passengers & crew."
+	}</code></pre>
+					</div>
+					<!-- <div class="bold abs-mg-top">
+						Statistics
+					</div>
+					<div class="color-light">
+						Here we show meta data of movie <i>Titanic</i>.
+					</div> -->
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal Data Photo-->
+	<div class="modal fade " id="modal-anno-character" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-width-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="md-font bold" id="exampleModalLabel">Examples and statistics of photots in MovieNet
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body ">
+					<div class="bold">
+						Example Photo
+					</div>
+					<div class="color-light">
+						Here we show samples for different types of photos in MovieNet.
+					</div>
+					<div align="center">
+						<img class="lg-media" src="src/imgs/examples/sample_p1.png" />
+						<div class="abs-mg-top-ti color-highlight">
+							Charcter ID: Matt Damon (nm0000354)
+						</div>
+						<br />
+						<img class="lg-media" src="src/imgs/examples/sample_p2.png" />
+						<div class="abs-mg-top-ti color-highlight">
+							Charcter ID: Kate Winslet (nm0000701)
+						</div>
+						<br />
+						<img class="lg-media" src="src/imgs/examples/sample_p3.png" />
+						<div class="abs-mg-top-ti color-highlight">
+							Charcter ID: Hugh Jackman (nm0413168)
+						</div>
+					</div>
+					<br />
+
+					<!-- <div class="bold">
+						Statistics
+					</div>
+					<div class="color-light">
+						We bla bla bla
+					</div> -->
+					<div align="center">
+						<!-- <img class="sm-media" src="src/imgs/examples/phototype.png" /> -->
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Modal Data Shottype-->
+	<div class="modal fade " id="modal-anno-shottype" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-width-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="md-font bold" id="exampleModalLabel">Example shot cinematic style annotation</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body ">
+					<div class="bold">
+						Shot Scale Annotation
+					</div>
+					<div class="color-light">
+						Shot scale depict the portion of subject within the frames in a shot.
+						Shot scale has 5 categories:
+						<br />
+						<span class="underline">1. Extreme close-up shot:</span>
+						it only shows a very small part of a subject, e.g., an eye or a mouth
+						of a person;
+						<br />
+						<span class="underline">2. Close-up shot:</span>
+						it concentrates on a relatively small part of a
+						subject, e.g., the face of the hand of a person;
+						<br />
+						<span class="underline">3. Medium shot:</span>
+						it contains part
+						of a subject e.g., a figure from the knees or waist up;
+						<br />
+						<span class="underline">4. Full shot:</span>
+						it includes the full subject;
+						<br />
+						<span class="underline">5. Long shot:</span>
+						it is taken from a long distance and the subject is
+						very small within the frames.
+						<br />
+					</div>
+					<br />
+					<div align="center">
+						<img class="lg-media" src="src/imgs/examples/dataset_csp_scale.png" />
+						<div class="abs-mg-top-ti color-light">
+							Example of shot scale annotation
+						</div>
+					</div>
+					<br />
+					<div class="bold">
+						Shot Movement
+					</div>
+					<div class="color-light">
+						Shot movement describe the camera movement or the lens change of a shot.
+						There are 4 categories of shot movement:
+						<br />
+						<span class="underline">1. Static shot:</span>
+						the camera is fixed but the subject is flexible to move;
+						<br />
+						<span class="underline">2. Pans and tilts shot:</span>
+						the camera moves or rotates;
+						<br />
+						<span class="underline">3. Zoom out shot:</span>
+						the camera zooms out for pull shot;
+						<br />
+						<span class="underline">4. Zoom in shot:</span>
+						the camera zooms in for push shot.
+						<br />
+					</div>
+					<br />
+					<div align="center">
+						<img class="lg-media" src="src/imgs/examples/dataset_csp_mov.png" />
+						<div class="abs-mg-top-ti color-light">
+							Example of shot movement annotation
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Data MSA-->
+	<div class="modal fade " id="modal-anno-synopsis" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-width-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="md-font bold" id="exampleModalLabel">Example of movie synopsis association annotation
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body ">
+					<div class="bold">
+						Example pair
+					</div>
+					<div class="color-light">
+						Here we show an example pair of synopsis paragraph and movie segment under
+						the scene of playing basketball. The video is fast-forwarded from original
+						length 220s to 12s.
+					</div>
+					<div align="center">
+						<video class="md-media" controls>
+							<source src="src/imgs/examples/basketball_12s.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<br />
+						<div class="pretty md-media justify-text-between text-board-pad">
+							Steven goes to the gym to play basketball with some friends, and
+							Chip awkwardly shows up. Chip inserts himself into the game,
+							and plays in a very aggressive manner, knocking down other players
+							and eventually break the basketball board. Steven is obviously
+							mad at Chip and walks off.
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Data Scene Boundary-->
+	<div class="modal fade " id="modal-anno-sceneseg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-width-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="md-font bold" id="exampleModalLabel">Example of scene segmentation annotation
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body ">
+					<div class="bold">
+						Examples
+					</div>
+					<div class="color-light">
+						Examples of the annotated scenes from two movies. The two lines in
+						the middle correspond to the whole movie time line where the dark blue and
+						light blue regions represent different annotated scenes, while the representative
+						frames sampled from some scenes are also shown.
+					</div>
+					<div align="center">
+						<img class="lg-media" src="src/imgs/examples/dataset_sseg.png" />
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal Data Tags-->
+	<div class="modal fade " id="modal-anno-tags" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-width-md" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="md-font bold" id="exampleModalLabel">Example of scene tags annotation
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body ">
+					<nav>
+						<div class="nav nav-tabs" id="nav-tab" role="tablist">
+							<a class="nav-item nav-link active" id="nav-action-tab" data-toggle="tab" href="#nav-action"
+								role="tab" aria-controls="nav-action" aria-selected="true">Action</a>
+							<a class="nav-item nav-link" id="nav-scene-tab" data-toggle="tab" href="#nav-scene"
+								role="tab" aria-controls="nav-scene" aria-selected="false">Scene</a>
+						</div>
+					</nav>
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="nav-action" role="tabpanel"
+							aria-labelledby="nav-action-tab">
+							<br />
+							<div class="color-light">
+								There are 80 action classes in MovieNet, here we show some of the examples.
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/eat_00.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/eat_01.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/eat_02.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/eat_03.gif" />
+								</div>
+								<div class="col-md-12 color-light" align="center">
+									Tag: eat
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/kiss_00.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/kiss_01.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/kiss_02.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/kiss_03.gif" />
+								</div>
+								<div class="col-md-12 color-light" align="center">
+									Tag: kiss
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/guitar_00.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/guitar_01.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/guitar_02.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/guitar_03.gif" />
+								</div>
+								<div class="col-md-12 color-light" align="center">
+									Tag: play guitar
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/gun_00.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/gun_01.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/gun_02.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/action/gun_03.gif" />
+								</div>
+								<div class="col-md-12 color-light" align="center">
+									Tag: shoot gun
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="nav-scene" role="tabpanel" aria-labelledby="nav-scene-tab">
+							<br />
+							<div class="color-light">
+								There are 90 scene classes in MovieNet, here we show some of the examples.
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/car_00.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/car_01.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/car_02.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/car_03.gif" />
+								</div>
+								<div class="col-md-12 color-light" align="center">
+									Tag: inside car
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/pier_00.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/pier_01.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/pier_02.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/pier_03.gif" />
+								</div>
+								<div class="col-md-12 color-light" align="center">
+									Tag: pier
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/airport_00.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/airport_01.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/airport_02.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/airport_03.gif" />
+								</div>
+								<div class="col-md-12 color-light" align="center">
+									Tag: airport
+								</div>
+							</div>
+							<br />
+							<div class="row">
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/spaceship_00.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/spaceship_01.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/spaceship_02.gif" />
+								</div>
+								<div class="col-md-3">
+									<img class="xl-media" src="src/imgs/examples/scene/spaceship_03.gif" />
+								</div>
+								<div class="col-md-12 color-light" align="center">
+									Tag: space ship
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	</div>
+
+	<script>
+		respondToWindowWidth();
+		$(window).resize(function () {
+			respondToWindowWidth();
+		});
+		event_bind();
+		popover_bind();
+		// respondToWindowWidth();
+		// var mymap = L.map('map-lab').setView([22.418, -245.792], 13);
+		// L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+		// 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		// 	maxZoom: 18,
+		// 	id: 'mapbox.streets',
+		// 	accessToken: 'pk.eyJ1IjoieXhpb25nMTIzIiwiYSI6ImNqeG9sYTRjNjA4Nm8zY3F1eXh4OWYyanAifQ.QskNkkb0DCuJCwo0d7ze2w'
+		// }).addTo(mymap);
+		// var marker = L.marker([22.418, -245.792]).addTo(mymap);
+		// marker.bindPopup("<b>MMLab (SHB 703, IE)</b><br>I am here.").openPopup();
+	</script>
+
+</body>
+
+</html>

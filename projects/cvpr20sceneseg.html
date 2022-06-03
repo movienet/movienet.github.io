@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="Project Page: Person Search in Videos with One Portrait
+    Through Visual and Temporal Links">
+    <meta name="keywords" content="movie, person search, reid, computer vision, deep learning">
+    <meta name="author" content="Qingqiu Huang">
+    <link rel="author" href="http://qqhuang.cn/">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Title and Icon -->
+    <title>Scene Segmentation (CVPR 2020)</title>
+    <link rel="icon" href="imgs/share/movienet_logo.png" />
+    <!-- include css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="headline">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-1 movienet align-self-center">
+                        <a href="../index.html">
+                            <img src="imgs/share/movienet_logo_text.png">
+                        </a>
+                    </div>
+                    <div class="col-md-10 text">
+                        <div class="title">A Local-to-Global Approach to 
+                            Multi-modal Movie Scene Segmentation</div>
+                        <div class="author">
+                            <a href="https://anyirao.com/">Anyi Rao</a>
+                            <a href="https://eveneveno.github.io/lnxu/">Linning Xu</a>
+                            <a href="http://www.xiongyu.me/home/">Yu Xiong</a>
+                            <a href="https://scholar.google.co.uk/citations?hl=en&user=r7QElw8AAAAJ">Guodong Xu</a>
+                            <a href="http://qqhuang.cn/">Qingqiu Huang</a>
+                            <a href="http://bzhou.ie.cuhk.edu.hk/">Bolei Zhou</a>
+                            <a href="http://dahua.me/">Dahua Lin</a>
+                        </div>
+                        <div class="affiliation">
+                            CUHK-SenseTime Joint Lab, The Chinese University of Hong Kong
+                        </div>
+                        <div class="venue">
+                            Computer Vision and Pattern Recognition (CVPR) 2020, Seattle, USA
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container article-main">
+        <div class="pic-wrapper-1">
+            <br>
+            <img src="imgs/cvpr20sceneseg/teaser.png">
+        </div>
+
+        <div class="section dashed">
+            <h4>Overview</h4>
+            <div class="abstract justify-text-between">
+            Scene, as the crucial unit of storytelling in movies, contains complex activities of actors and their interactions in
+            a physical location. Identifying the composition and semantics of scenes
+            serves as a critical step towards visual understanding of complex and long videos such as movies, TV episodes, entertainment shows and variety shows. 
+            <br>
+            This work is going to help divide a long video into semantic continuous short videos and output a structural representation.
+            And it also provides research opportunities towards story/plot understanding in long videos with a semantic unit.
+            </div>
+        </div>
+
+
+
+        <div class="section demo">
+            <h4>Introduction Video</h4>
+                <br>
+                <center>
+                    <iframe width="820" height="480" src="https://www.youtube.com/embed/NfyOxC6k1u8" frameborder="0" allowfullscreen></iframe>
+                </video>
+                <br>
+                </center>
+        </div>
+
+        <div class="section dashed">
+            <h4>Potential Applications</h4>
+            <h5>Human Interaction Graph Generation</h5>
+            <div class="abstract justify-text-between">
+                The first line is American Hustle scene segmentation coming from scene detection, where dark blue
+                and light blue intertwine with each other to represent different Scenes. The second to fourth line corresponds to C.B. Christian Bale; B.C.
+                Bradley Cooper; A.A. Amy Adams Scenes occurrence time lines in this movie respectively, where the dark green means occurring while
+                light green does not. The graph below represents their interaction over the story line. The dark red represents a closer relationship while
+                the light red represents a far-away relationship and two demo pictures are shown for closer relationships.
+                <center><br><img src="imgs/cvpr20sceneseg/humanint.png" width="80%"></center>
+                
+                <h5>Cross Movie Scene Retrieval</h5>
+                Given a specific scene in one movie and we retrieve similar ones in
+                other movies. For example, 
+                we choose a conversation scene and a party scene from Ted (2012) as query, then retrieved scenes
+                from other movies.
+                <center><br><img src="imgs/cvpr20sceneseg/retrieval.png" width="80%"></center>
+            </div>
+        </div>
+
+
+        <div class="section dashed">
+            <h4>Materials</h4>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="griditem">
+                        <a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Rao_A_Local-to-Global_Approach_to_Multi-Modal_Movie_Scene_Segmentation_CVPR_2020_paper.html" target="_blank" class="imageLink" >
+                            <img src="imgs/cvpr20sceneseg/paper.png"></a><br>
+                            <a href="https://arxiv.org/abs/2004.02678" target="_blank"> Arxiv</a> /
+                        <a href="https://anyirao.com/files/papers/cvpr2020scene.pdf" target="_blank"> PDF</a>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="griditem">
+                        <a href="https://anyirao.com/files/papers/cvpr2020scene_poster.pdf"
+                            target="_blank" class="image-link">
+                            <img src="imgs/cvpr20sceneseg/poster.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Poster</span></a>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="griditem">
+                        <a href="https://anyirao.com/files/papers/cvpr2020scene_supp.pdf" target="_blank"
+                            class="image-link">
+                            <img src="imgs/cvpr20sceneseg/supp.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Supplements</span></a>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="griditem">
+                        <a href="https://github.com/hqqasw/person-search-PPCC" target="_blank"
+                            class="image-link">
+                            <img src="imgs/share/github_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Code</span></a>
+                    </div>
+                </div>
+                <div class=" col-md-2">
+                    <div class="griditem">
+                        <a href="https://drive.google.com/drive/folders/1F-uqCKnhtSdQKcDUiL3dRcLOrAxHargz" target="_blank" class="image-link">
+                            <img src="imgs/share/dataset_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Dataset</span></a>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <h4>Videos</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="griditem">
+                        <a href="https://www.youtube.com/watch?v=hSXXR5wTYmc" target="_blank" class="imageLink" >
+                            <img src="imgs/cvpr20sceneseg/cvpr20.png"></a><br>
+                        <a href="https://www.youtube.com/watch?v=hSXXR5wTYmc" target="_blank"> 1-min Spotlight</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="griditem">
+                        <a href="https://www.youtube.com/watch?v=Qo6E_hNn9mc" target="_blank" class="imageLink" >
+                            <img src="imgs/cvpr20sceneseg/demo.png"></a><br>
+                        <a href="https://www.youtube.com/watch?v=Qo6E_hNn9mc" target="_blank"> Demo</a> /
+                        <a href="https://www.bilibili.com/video/BV1ep4y1C7N8" target="_blank"> Bilibili</a> 
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <h4>Workshop @ CVPR 2020 Presentations</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="griditem">
+                        <a href="https://www.youtube.com/watch?v=hb80-dNbIZQ" target="_blank" class="imageLink" >
+                            <img src="imgs/cvpr20sceneseg/wss20.png"></a><br>
+                        <a href="http://sightsound.org/" target="_blank"> Sight and Sound 2020</a>
+                        <br>5-min talk
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="griditem">
+                        <a href="https://sites.google.com/view/luv2020/talks/rao" target="_blank" class="imageLink" >
+                            <img src="imgs/cvpr20sceneseg/luv20.png"></a><br>
+                        <a href="https://sites.google.com/view/luv2020" target="_blank"> Learning from Unlabeled Videos 2020</a> 
+                        <br>15-min talk
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div class="section dashed">
+            <h4>Citation</h4>
+            <div class="code-light-bg">
+                <pre><code>@inproceedings{rao2020local,
+    title={A Local-to-Global Approach to Multi-modal Movie Scene Segmentation},
+    author={Rao, Anyi and Xu, Linning and Xiong, Yu and Xu, Guodong and Huang, Qingqiu and Zhou, Bolei and Lin, Dahua},
+    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    pages={10146--10155},
+    year={2020}
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h4>Contact</h4>
+            <a href="https://anyirao.com/" target="_blank">Anyi Rao</a>:
+            <span class="color-light">anyirao [AT] ie.cuhk.edu.hk</span>
+            <br>
+            <a href="https://eveneveno.github.io/lnxu/" target="_blank">Linning Xu</a>:
+            <span class="color-light">linningxu [AT] link.cuhk.edu.cn</span>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            &copy <a href="http://mmlab.ie.cuhk.edu.hk" target="_blank" class="text-warning">Multimedia Lab</a>, The
+            Chinese University of
+            Hong Kong
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript " src="../js/jquery.min.js "></script>
+
+</html>

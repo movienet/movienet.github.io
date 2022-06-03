@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="Project Page: A Graph-Based Framework to Bridge Movies and Synopses">
+    <meta name="keywords" content="movie, synopsis, retrieval, computer vision, deep learning, xiongyu">
+    <meta name="author" content="Xiong Yu">
+    <link rel="author" href="http://xiongyu.me">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Title and Icon -->
+    <title>Movie Synopsis Association (ICCV 2019)</title>
+    <link rel="icon" href="imgs/share/movienet_logo.png" />
+    <!-- include css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 movienet align-self-center">
+                    <a href="../index.html">
+                        <img src="imgs/share/movienet_logo_text.png">
+                    </a>
+                </div>
+                <div class="col-md-10 text">
+                    <div class="title">A Graph-Based Framework to Bridge Movies and Synopses</div>
+                    <div class="author">
+                        <a href="http://xiongyu.me/" target="_blank">Yu Xiong<sup>1</sup></a>
+                        <a href="http://qqhuang.cn" target="_blank">Qingqiu Huang<sup>1</sup></a>
+                        <a href="javascript:void(0)">Lingfeng Guo<sup>2</sup></a>
+                        <a href="https://hangz-nju-cuhk.github.io/" target="_blank">Hang Zhou<sup>1</sup></a>
+                        <a href="http://bzhou.ie.cuhk.edu.hk/" target="_blank">Bolei Zhou<sup>1</sup></a>
+                        <a href="http://dahua.me/" target="_blank">Dahua Lin<sup>1</sup></a>
+                    </div>
+                    <div class="affiliation">
+                        CUHK-SenseTime Joint Lab, The Chinese University of Hong Kong<sup>1</sup>
+                        University of California, Berkeley<sup>2</sup>
+                    </div>
+                    <div class="venue">
+                        International Conference on Computer Vision (ICCV) 2019, Seoul, Korea
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container article-main">
+        <div class="pic-wrapper-1">
+            <br>
+            <img src="imgs/iccv19moviesyn/teaser.png">
+        </div>
+
+        <div class="section dashed">
+            <h4>Abstract</h4>
+            <div class="abstract justify-text-between">
+                Inspired by the remarkable advances in video analytics, research teams are stepping towards a greater
+                ambition – movie understanding. However, compared to those activity videos in conventional datasets,
+                movies are significantly different. Generally, movies are much longer and consist of much richer
+                temporal structures. More importantly, the interactions among characters play a central role in
+                expressing the underlying story. To facilitate the efforts along this direction, we construct a dataset
+                called Movie Synopses Associations (MSA) over 327 movies, which provides a synopsis for each movie,
+                together with annotated associations between synopsis paragraphs and movie segments. On top of this
+                dataset, we develop a framework to perform matching between movie segments and synopsis paragraphs. This
+                framework integrates different aspects of a movie, including event dynamics and character interactions,
+                and allows them to be matched with parsed paragraphs, based on a graph-based formulation. Our study
+                shows that the proposed framework remarkably improves the matching accuracy over conventional
+                feature-based methods. It also reveals the importance of narrative structures and character interactions
+                in movie understanding.
+            </div>
+        </div>
+
+        <div class=" section dashed">
+            <h4>Dataset</h4>
+            <div class="color-light justify-text-between abs-mg-bot">We proposed a new dataset called Movie Synopsis
+                Association
+                for cross modality
+                understanding. The associations between movie segments and synopsis paragraphs are provided.
+                These
+                annotations can
+                facilitate tasks such as video retrieval, caption generation, etc.</div>
+
+            <center>
+                <img width="80%" src="imgs/iccv19moviesyn/dataset.png">
+                <br>
+                <br>
+                <div class="col-md-8">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Splits</th>
+                                <th>Train</th>
+                                <th>Val</th>
+                                <th>Test</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="color-light">
+                            <tr>
+                                <td># Movies</td>
+                                <td>249</td>
+                                <td>28</td>
+                                <td>50</td>
+                                <td>327</td>
+                            </tr>
+                            <tr>
+                                <td># Segments</td>
+                                <td>3329</td>
+                                <td>341</td>
+                                <td>824</td>
+                                <td>4494</td>
+                            </tr>
+                            <tr>
+                                <td># Shots / seg.</td>
+                                <td>96.4</td>
+                                <td>89.8</td>
+                                <td>76.9</td>
+                                <td>92.3</td>
+                            </tr>
+                            <tr>
+                                <td>Duration / seg.</td>
+                                <td>427.4</td>
+                                <td>469.6</td>
+                                <td>332.8</td>
+                                <td>413.3</td>
+                            </tr>
+                            <tr>
+                                <td># Sents. / para.</td>
+                                <td>6.0</td>
+                                <td>6.0</td>
+                                <td>5.5</td>
+                                <td>5.9</td>
+                            </tr>
+                            <tr>
+                                <td># Words. / para.</td>
+                                <td>130.8</td>
+                                <td>132.5</td>
+                                <td>120.5</td>
+                                <td>129.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </center>
+        </div>
+
+        <div class="section dashed">
+            <h4>Materials</h4>
+            <div class="row justify-content-between">
+                <div class="col-md-3">
+                    <div class="griditem">
+                        <a href="http://openaccess.thecvf.com/content_ICCV_2019/papers/Xiong_A_Graph-Based_Framework_to_Bridge_Movies_and_Synopses_ICCV_2019_paper.pdf"
+                            target="_blank" class="image-link">
+                            <img src="imgs/iccv19moviesyn/0385.thumbnail.small.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Paper</span></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="griditem">
+                        <a href="http://xiongyu.me/src/conference/iccv19/0385.poster.pdf" target="_blank"
+                            class="image-link">
+                            <img src="imgs/iccv19moviesyn/0385.poster.small.png">
+                            <br/>
+                            <span class="text-primary abs-mg-top-ti">Poster</span></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="griditem">
+                        <a href="https://github.com/ycxioooong/MovieSynopsisAssociation" target="_blank"
+                            class="image-link">
+                            <img src="imgs/share/github_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Code</span></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="griditem">
+                        <a href="javascript:void(0)" target="_blank" class="image-link">
+                            <img src="imgs/share/dataset_icon.png">
+                            <br />
+                            <span class="text-primary abs-mg-top-ti">Dataset</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="section dashed">
+            <h4>Citation</h4>
+            <div class="code-light-bg">
+                <pre><code>@InProceedings{Xiong_2019_ICCV,
+    author = {Xiong, Yu and Huang, Qingqiu and Guo, Lingfeng and Zhou, Hang and Zhou, Bolei and Lin, Dahua},
+    title = {A Graph-Based Framework to Bridge Movies and Synopses},
+    booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+    month = {October},
+    year = {2019}
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h4>Contact</h4>
+            <a href="http://xiongyu.me/" target="_blank">Xiong Yu(熊宇)</a>:
+            <span class="color-light">xy017 [AT] ie.cuhk.edu.hk</span>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            &copy <a href="http://mmlab.ie.cuhk.edu.hk" target="_blank" class="text-warning">Multimedia Lab</a>, The
+            Chinese University of
+            Hong Kong
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript " src="../js/jquery.min.js "></script>
+
+</html>
